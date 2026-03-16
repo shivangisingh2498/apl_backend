@@ -19,7 +19,7 @@ namespace APL.Entities
         public DateTime? createdon { get; set; }
         public string? updatedby { get; set; }
         public DateTime? updatedon { get; set; }
-        public ObjectMaster? tbl_object_master { get; set; }
+        public RolesMaster? tbl_roles_master { get; set; }
         public DepartmentMaster? tbl_department_master { get; set; }
     }
 

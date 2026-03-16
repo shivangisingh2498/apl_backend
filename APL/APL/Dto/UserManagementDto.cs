@@ -7,6 +7,7 @@ namespace APL.Models
     {
         public List<UserManagementDto>?  userList { get; set; }
         public List<DepartmentMasterDto>? departmentList { get; set; }
+        public List<RolesDto>? rolesList { get; set; }
     }
 
     public class UserManagementDto
@@ -40,6 +41,13 @@ namespace APL.Models
         public string? department { get; set; }
         public string? departmentName { get; set; }
         public bool isActive { get; set; } = true;
+    }
+
+    public class RolesDto
+    {
+        public int id { get; set; }
+        public string? roles { get; set; }
+        public string? description { get; set; }
     }
 
 }

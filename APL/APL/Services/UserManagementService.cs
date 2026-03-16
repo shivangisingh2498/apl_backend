@@ -19,7 +19,7 @@ namespace APL.Services
 
         public async Task<UserDepartmentDto> GetAllUsers()
         {
-            List<UserManagementDto>? userList = await _db.tbl_user_management.Include(x=>x.tbl_department_master).Include(x=>x.tbl_object_master)
+            List<UserManagementDto>? userList = await _db.tbl_user_management.Include(x=>x.tbl_department_master).Include(x=>x.tbl_roles_master)
                 .AsNoTracking().Where(x=>x.isactive).Select(x=> new UserManagementDto
                 {
                     id = x.id,
@@ -27,7 +27,7 @@ namespace APL.Services
                     email = x.email,
                     departmentName = x.tbl_department_master.department,
                     supervisor = x.supervisor,
-                    type = x.tbl_object_master.value
+                    type = x.tbl_roles_master.roles
                 })
                .AsNoTracking()
                .OrderByDescending(f => f.id)
@@ -43,10 +43,21 @@ namespace APL.Services
               .OrderByDescending(f => f.id)
               .ToListAsync();
 
+            List<RolesDto>? rolesList = await _db.tbl_roles_master.AsNoTracking()
+               .Where(x => x.isactive).Select(x => new RolesDto
+               {
+                   id = x.id,
+                   roles = x.roles
+               })
+              .AsNoTracking()
+              .OrderByDescending(f => f.id)
+              .ToListAsync();
+
             UserDepartmentDto result = new UserDepartmentDto
             {
                 userList = userList,
-                departmentList = departmentList
+                departmentList = departmentList,
+                rolesList = rolesList
             };
 
             return result;
