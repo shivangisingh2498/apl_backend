@@ -28,18 +28,13 @@ namespace APL.Services
         }
         public async Task<IEnumerable<PerspectiveDto>> GetPerspectiveData()
         {
-            var result = await _db.tbl_perspective.Include(x => x.tbl_strategic_objective)
+            var result = await _db.tbl_perspective
                .AsNoTracking().
                Select(
                 x => new PerspectiveDto
                 {
                     id = x.id,
-                    perspective = x.perspective,
-                    strategicObjective = x.tbl_strategic_objective.Select(x => new ObjectiveDto
-                    {
-                        id = x.id,
-                        objective = x.strategicobjective
-                    }).ToList()
+                    perspective = x.perspective,                    
                 }
                 )
                .OrderBy(f => f.id)

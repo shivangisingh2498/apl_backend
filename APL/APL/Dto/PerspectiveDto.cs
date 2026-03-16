@@ -3,8 +3,8 @@
     public class PerspectiveDto
     {
         public long id { get; set; }
-        public string? perspective { get; set; } 
-        public List<ObjectiveDto>? strategicObjective { get; set; }
+        public string? perspective { get; set; }
+        public string? description { get; set; }
 
     }
     public class ObjectiveDto

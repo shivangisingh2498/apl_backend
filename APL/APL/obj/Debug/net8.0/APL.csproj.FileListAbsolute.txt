@@ -114,3 +114,4 @@ C:\Backend project\project\APL\APL\bin\Debug\net8.0\Microsoft.IdentityModel.Prot
 C:\Backend project\project\APL\APL\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Backend project\project\APL\APL\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Backend project\project\APL\APL\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Backend project\project\APL\APL\obj\Debug\net8.0\APL.sourcelink.json

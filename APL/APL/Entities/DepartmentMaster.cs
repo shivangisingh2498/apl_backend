@@ -9,8 +9,8 @@ namespace APL.Entities
     {
         [Key]
         public int id { get; set; }
-        public string department { get; set; } = null!;
-        public string departmentname { get; set; } = null!;
+        public string? department { get; set; }
+        public string? departmentname { get; set; }
         public bool isactive { get; set; } = true;
         public string? createdby { get; set; }
         public DateTime? createdon { get; set; }

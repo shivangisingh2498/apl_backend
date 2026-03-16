@@ -12,11 +12,9 @@ namespace APL.Entities
         public string perspective { get; set; } = null!;
         public bool isactive { get; set; } = true;
         public string? createdby { get; set; }
-        public DateTimeOffset? createddttm { get; set; }
+        public DateTime? createddttm { get; set; }
         public string? updatedby { get; set; }
-        public DateTimeOffset? updateddttm { get; set; }
-        [JsonIgnore]
-        public ICollection<StrategicObjective> tbl_strategic_objective{ get; set; } = new List<StrategicObjective>();
+        public DateTime? updateddttm { get; set; }
     }
 
 }

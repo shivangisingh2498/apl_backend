@@ -14,13 +14,6 @@ namespace APL.Data
             modelBuilder.HasDefaultSchema("bsc");
             base.OnModelCreating(modelBuilder);
 
-            // FK: StrategicObjective.perspectiveid -> Perspective.id
-            modelBuilder.Entity<StrategicObjective>()
-                    .HasOne(so => so.tbl_perspective)
-                    .WithMany(p => p.tbl_strategic_objective)
-                    .HasForeignKey(so => so.perspectiveid)
-                    .OnDelete(DeleteBehavior.Restrict);
-
 
             modelBuilder.Entity<UserManagement>()
                    .HasOne(x => x.tbl_department_master)
@@ -41,7 +34,7 @@ namespace APL.Data
 
         public DbSet<Perspective> tbl_perspective { get; set; }
         public DbSet<StrategicObjective> tbl_strategic_objective { get; set; }
-        public DbSet<DepartmentMaster> tbl_department{ get; set; }
+        public DbSet<DepartmentMaster> tbl_department_master{ get; set; }
 
         public DbSet<ObjectMaster> tbl_object_master { get; set; }
         public DbSet<UserManagement> tbl_user_management { get; set; }

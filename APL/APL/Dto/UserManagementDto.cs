@@ -3,15 +3,21 @@ using System.ComponentModel.DataAnnotations;
 
 namespace APL.Models
 {
+    public class UserDepartmentDto
+    {
+        public List<UserManagementDto>?  userList { get; set; }
+        public List<DepartmentMasterDto>? departmentList { get; set; }
+    }
+
     public class UserManagementDto
     {
         public int id { get; set; }
         public string? name { get; set; }
         public string? email { get; set; }
-        public string? departmentname { get; set; }
+        public string? departmentName { get; set; }
         public string? supervisor { get; set; }
         public string? type { get; set; }
-        public bool isactive { get; set; } = true;
+        public bool isActive { get; set; } = true;
     }
     public class UserCreateDto
     {
@@ -21,11 +27,19 @@ namespace APL.Models
         [Required]
         public string? email { get; set; }
         [Required]
-        public int departmentid { get; set; }
+        public int departmentId { get; set; }
         [Required]
         public string? supervisor { get; set; }
         [Required]
-        public int typeid { get; set; }
+        public int typeId { get; set; }
+    }
+
+    public class DepartmentMasterDto
+    {
+        public int id { get; set; }
+        public string? department { get; set; }
+        public string? departmentName { get; set; }
+        public bool isActive { get; set; } = true;
     }
 
 }

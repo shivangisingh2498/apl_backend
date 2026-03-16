@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace APL.Controllers
 {
     [Route("api/[controller]/[action]")]
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     [ApiController]
     public class UserManagementController : ControllerBase
     {
@@ -30,9 +30,9 @@ namespace APL.Controllers
         {
             try
             {
-                var result = await _service.GetAllUsers();
+                UserDepartmentDto result = await _service.GetAllUsers();
 
-                var dto = new CustomResponse<IEnumerable<UserManagementDto>>
+                var dto = new CustomResponse<UserDepartmentDto>
                 {
                     status = "success",
                     data = result 

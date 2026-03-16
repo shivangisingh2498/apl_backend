@@ -18,47 +18,47 @@ builder.Services.AddScoped<IFormMasterService, FormMasterService>();
 builder.Services.AddScoped<IUserManagementService, UserManagementService>();
 
 // --- 3. Authentication & JWT Configuration ---
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(options =>
-    {
-        options.Events = new JwtBearerEvents
-        {
-            OnMessageReceived = context =>
-            {
-                var authHeader = context.Request.Headers["Authorization"].FirstOrDefault();
-                if (string.IsNullOrEmpty(authHeader) || !authHeader.StartsWith("Bearer "))
-                    return Task.CompletedTask;
+//builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+//    .AddJwtBearer(options =>
+//    {
+//        options.Events = new JwtBearerEvents
+//        {
+//            OnMessageReceived = context =>
+//            {
+//                var authHeader = context.Request.Headers["Authorization"].FirstOrDefault();
+//                if (string.IsNullOrEmpty(authHeader) || !authHeader.StartsWith("Bearer "))
+//                    return Task.CompletedTask;
 
-                var token = authHeader.Substring("Bearer ".Length).Trim();
-                var handler = new JwtSecurityTokenHandler();
+//                var token = authHeader.Substring("Bearer ".Length).Trim();
+//                var handler = new JwtSecurityTokenHandler();
 
-                if (handler.CanReadToken(token))
-                {
-                    var jwt = handler.ReadJwtToken(token);
+//                if (handler.CanReadToken(token))
+//                {
+//                    var jwt = handler.ReadJwtToken(token);
 
-                    // Manually create the Identity. 
-                    // "DummyAuth" is the authentication type (marks it as Authenticated)
-                    // "name" and "roles" match your JSON keys
-                    var identity = new ClaimsIdentity(jwt.Claims, "DummyAuth", "name", "roles");
+//                    // Manually create the Identity. 
+//                    // "DummyAuth" is the authentication type (marks it as Authenticated)
+//                    // "name" and "roles" match your JSON keys
+//                    var identity = new ClaimsIdentity(jwt.Claims, "DummyAuth", "name", "roles");
 
-                    context.Principal = new ClaimsPrincipal(identity);
-                    context.Success(); // This skips the internal signature check
-                }
-                return Task.CompletedTask;
-            }
-        };
+//                    context.Principal = new ClaimsPrincipal(identity);
+//                    context.Success(); // This skips the internal signature check
+//                }
+//                return Task.CompletedTask;
+//            }
+//        };
 
-        // These parameters are still needed as a fallback, but OnMessageReceived takes priority
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuer = false,
-            ValidateAudience = false,
-            ValidateLifetime = false,
-            RequireSignedTokens = false,
-            NameClaimType = "name",
-            RoleClaimType = "roles"
-        };
-    });
+//        // These parameters are still needed as a fallback, but OnMessageReceived takes priority
+//        options.TokenValidationParameters = new TokenValidationParameters
+//        {
+//            ValidateIssuer = false,
+//            ValidateAudience = false,
+//            ValidateLifetime = false,
+//            RequireSignedTokens = false,
+//            NameClaimType = "name",
+//            RoleClaimType = "roles"
+//        };
+//    });
 
 builder.Services.AddAuthorization();
 

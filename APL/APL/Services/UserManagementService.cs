@@ -17,21 +17,37 @@ namespace APL.Services
             _db = db;
         }
 
-        public async Task<IEnumerable<UserManagementDto>> GetAllUsers()
+        public async Task<UserDepartmentDto> GetAllUsers()
         {
-            IEnumerable<UserManagementDto> result = await _db.tbl_user_management.Include(x=>x.tbl_department_master).Include(x=>x.tbl_object_master)
-                .Where(x=>x.isactive).Select(x=> new UserManagementDto
+            List<UserManagementDto>? userList = await _db.tbl_user_management.Include(x=>x.tbl_department_master).Include(x=>x.tbl_object_master)
+                .AsNoTracking().Where(x=>x.isactive).Select(x=> new UserManagementDto
                 {
                     id = x.id,
                     name = x.name,
                     email = x.email,
-                    departmentname = x.tbl_department_master.department,
+                    departmentName = x.tbl_department_master.department,
                     supervisor = x.supervisor,
                     type = x.tbl_object_master.value
                 })
                .AsNoTracking()
                .OrderByDescending(f => f.id)
                .ToListAsync();
+
+            List<DepartmentMasterDto>? departmentList = await _db.tbl_department_master.AsNoTracking()
+               .Where(x => x.isactive).Select(x => new DepartmentMasterDto
+               {
+                   id = x.id,
+                   departmentName = x.department
+               })
+              .AsNoTracking()
+              .OrderByDescending(f => f.id)
+              .ToListAsync();
+
+            UserDepartmentDto result = new UserDepartmentDto
+            {
+                userList = userList,
+                departmentList = departmentList
+            };
 
             return result;
 
@@ -45,8 +61,8 @@ namespace APL.Services
             {
                 name = dto?.name?.Trim(),
                 email = dto?.email?.Trim(),
-                departmentid = dto.departmentid,
-                typeid = dto.typeid,
+                departmentid = dto.departmentId,
+                typeid = dto.typeId,
                 supervisor = string.IsNullOrWhiteSpace(dto.supervisor) ? null : dto.supervisor.Trim(),
                 isactive = true,
                 createdon = DateTime.UtcNow,
@@ -86,8 +102,8 @@ namespace APL.Services
             {
                 entity.name = dto?.name?.Trim();
                 entity.email = dto?.email?.Trim();
-                entity.departmentid = dto.departmentid;
-                entity.typeid = dto.typeid;
+                entity.departmentid = dto.departmentId;
+                entity.typeid = dto.typeId;
                 entity.supervisor = string.IsNullOrWhiteSpace(dto.supervisor) ? null : dto.supervisor.Trim();
                 entity.isactive = true;
                 entity.updatedon = DateTime.UtcNow;
