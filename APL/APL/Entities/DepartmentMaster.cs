@@ -1,0 +1,23 @@
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
+
+namespace APL.Entities
+{
+    [Table("tbl_department_master")]
+    public class DepartmentMaster
+    {
+        [Key]
+        public int id { get; set; }
+        public string department { get; set; } = null!;
+        public string departmentname { get; set; } = null!;
+        public bool isactive { get; set; } = true;
+        public string? createdby { get; set; }
+        public DateTime? createdon { get; set; }
+        public string? updatedby { get; set; }
+        public DateTime? updatedon { get; set; }
+        [JsonIgnore]
+        public ICollection<UserManagement> tbl_user_management { get; set; } = new List<UserManagement>();
+    }
+
+}
