@@ -1,5 +1,15 @@
 [
   {
+    "ContainingType": "APL.Controllers.BscTemplateController",
+    "Method": "GetAllBU",
+    "RelativePath": "api/BscTemplate/GetAllBU",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "APL.Controllers.FormController",
     "Method": "Delete",
     "RelativePath": "api/Form/Delete/{id}",

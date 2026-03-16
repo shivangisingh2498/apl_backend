@@ -28,30 +28,17 @@ namespace APL.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllUsers()
         {
-            try
+
+            UserDepartmentDto result = await _service.GetAllUsers();
+
+            var dto = new CustomResponse<UserDepartmentDto>
             {
-                UserDepartmentDto result = await _service.GetAllUsers();
+                status = "success",
+                data = result
+            };
 
-                var dto = new CustomResponse<UserDepartmentDto>
-                {
-                    status = "success",
-                    data = result 
-                };
+            return Ok(dto);
 
-                return Ok(dto);
-            }
-            catch (Exception ex)
-            {
-
-                _logger.LogError(ex.Message);
-                var dto = new
-                {
-                    status = "error",
-                    response = ex.Message
-                };
-                return BadRequest(dto);
-
-            }
 
         }
 
@@ -59,93 +46,47 @@ namespace APL.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateUser(UserCreateDto user)
         {
-            try
+            int result = await _service.CreateUser(user);
+
+            CustomResponse<int> dto = new CustomResponse<int>
             {
-                int result = await _service.CreateUser(user);
+                status = "success",
+                data = result
+            };
 
-                CustomResponse<int> dto = new CustomResponse<int>
-                {
-                    status = "success",
-                    data = result
-                };
-
-                return Ok(dto);
-            }
-            catch (Exception ex)
-            {
-
-                _logger.LogError(ex.Message);
-                var dto = new
-                {
-                    status = "error",
-                    response = ex.Message
-                };
-                return BadRequest(dto);
-
-            }
-
+            return Ok(dto);
         }
 
 
         [HttpDelete]
         public async Task<IActionResult> DeleteUser(UserCreateDto user)
         {
-            try
+
+            bool result = await _service.DeleteUser(user);
+
+            CustomResponse<bool> dto = new CustomResponse<bool>
             {
-                bool result = await _service.DeleteUser(user);
+                status = "success",
+                data = result
+            };
 
-                CustomResponse<bool> dto = new CustomResponse<bool>
-                {
-                    status = "success",
-                    data = result
-                };
-
-                return Ok(dto);
-            }
-            catch (Exception ex)
-            {
-
-                _logger.LogError(ex.Message);
-                var dto = new
-                {
-                    status = "error",
-                    response = ex.Message
-                };
-                return BadRequest(dto);
-
-            }
-
+            return Ok(dto);
         }
 
 
         [HttpPost]
         public async Task<IActionResult> UpdateUser(UserCreateDto user)
         {
-            try
+
+            bool result = await _service.UpdateUser(user);
+
+            CustomResponse<bool> dto = new CustomResponse<bool>
             {
-                bool result = await _service.UpdateUser(user);
+                status = "success",
+                data = result
+            };
 
-                CustomResponse<bool> dto = new CustomResponse<bool>
-                {
-                    status = "success",
-                    data = result
-                };
-
-                return Ok(dto);
-            }
-            catch (Exception ex)
-            {
-
-                _logger.LogError(ex.Message);
-                var dto = new
-                {
-                    status = "error",
-                    response = ex.Message
-                };
-                return BadRequest(dto);
-
-            }
-
+            return Ok(dto);
         }
 
 

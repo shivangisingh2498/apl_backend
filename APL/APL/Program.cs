@@ -1,4 +1,5 @@
 ﻿using APL.Data;
+using APL.Middleware;
 using APL.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -15,7 +16,9 @@ builder.Services.AddDbContext<AplDbContext>(options =>
 // --- 2. Dependency Injection Services ---
 builder.Services.AddControllers();
 builder.Services.AddScoped<IFormMasterService, FormMasterService>();
+builder.Services.AddScoped<IBscTemplateService, BscTemplateService>();
 builder.Services.AddScoped<IUserManagementService, UserManagementService>();
+builder.Services.AddTransient<ExceptionHandlingMiddleware>();
 
 // --- 3. Authentication & JWT Configuration ---
 //builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -63,7 +66,7 @@ builder.Services.AddScoped<IUserManagementService, UserManagementService>();
 builder.Services.AddAuthorization();
 
 var app = builder.Build();
-
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 // --- 4. Middleware Pipeline ---
 // The order here is critical for security to function
 app.UseHttpsRedirection();
