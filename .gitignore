@@ -1,0 +1,23 @@
+# Visual Studio solution-level cache (your path is APL/.vs/)
+APL/.vs/
+
+# Build outputs anywhere under APL/
+APL/**/bin/
+APL/**/obj/
+
+# Copilot / IntelliCode indices (belt-and-braces)
+APL/**/CopilotIndices/
+APL/**/SemanticSymbols.db
+APL/**/CodeChunks.db
+APL/**/.vsidx
+APL/**/*.db
+APL/**/*.db-shm
+APL/**/*.db-wal
+
+# General (good practice)
+.vscode/
+*.user
+*.suo
+*.nupkg
+TestResults/
+artifacts/
