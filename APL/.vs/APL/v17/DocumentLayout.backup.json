@@ -3,20 +3,32 @@
   "WorkspaceRootPath": "C:\\Backend project\\project\\APL\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|c:\\backend project\\project\\apl\\apl\\controllers\\usermanagementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|solutionrelative:apl\\controllers\\usermanagementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|c:\\backend project\\project\\apl\\apl\\services\\usermanagementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|solutionrelative:apl\\services\\usermanagementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|c:\\backend project\\project\\apl\\apl\\dto\\usermanagementdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|solutionrelative:apl\\dto\\usermanagementdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|c:\\backend project\\project\\apl\\apl\\services\\usermanagementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|solutionrelative:apl\\services\\usermanagementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|c:\\backend project\\project\\apl\\apl\\entities\\usermanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|solutionrelative:apl\\entities\\usermanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|c:\\backend project\\project\\apl\\apl\\entities\\objectmaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|solutionrelative:apl\\entities\\objectmaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|c:\\backend project\\project\\apl\\apl\\context\\apldbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|solutionrelative:apl\\context\\apldbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|c:\\backend project\\project\\apl\\apl\\entities\\rolesmaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|solutionrelative:apl\\entities\\rolesmaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|c:\\backend project\\project\\apl\\apl\\controllers\\usermanagementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|solutionrelative:apl\\controllers\\usermanagementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|c:\\backend project\\project\\apl\\apl\\services\\iusermanagementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|c:\\backend project\\project\\apl\\apl\\entities\\departmentmaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|solutionrelative:apl\\entities\\departmentmaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|c:\\backend project\\project\\apl\\apl\\entities\\usermanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|solutionrelative:apl\\entities\\usermanagement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|c:\\backend project\\project\\apl\\apl\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -79,10 +87,6 @@
       "RelativeMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|solutionrelative:apl\\entities\\formmaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|c:\\backend project\\project\\apl\\apl\\entities\\objectmaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|solutionrelative:apl\\entities\\objectmaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|c:\\backend project\\project\\apl\\apl\\controllers\\formcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|solutionrelative:apl\\controllers\\formcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -94,17 +98,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "UserManagementService.cs",
               "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Services\\UserManagementService.cs",
               "RelativeDocumentMoniker": "APL\\Services\\UserManagementService.cs",
               "ToolTip": "C:\\Backend project\\project\\APL\\APL\\Services\\UserManagementService.cs",
               "RelativeToolTip": "APL\\Services\\UserManagementService.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAuwCMAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAACoAAAAAAAAAAAAUwDsAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-05T09:21:49.659Z",
               "EditorCaption": ""
@@ -117,27 +121,66 @@
               "RelativeDocumentMoniker": "APL\\Dto\\UserManagementDto.cs",
               "ToolTip": "C:\\Backend project\\project\\APL\\APL\\Dto\\UserManagementDto.cs",
               "RelativeToolTip": "APL\\Dto\\UserManagementDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABEAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-05T09:50:13.085Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "UserManagement.cs",
+              "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Entities\\UserManagement.cs",
+              "RelativeDocumentMoniker": "APL\\Entities\\UserManagement.cs",
+              "ToolTip": "C:\\Backend project\\project\\APL\\APL\\Entities\\UserManagement.cs",
+              "RelativeToolTip": "APL\\Entities\\UserManagement.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABUAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T07:14:13.675Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "AplDbContext.cs",
               "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Context\\AplDbContext.cs",
               "RelativeDocumentMoniker": "APL\\Context\\AplDbContext.cs",
               "ToolTip": "C:\\Backend project\\project\\APL\\APL\\Context\\AplDbContext.cs",
               "RelativeToolTip": "APL\\Context\\AplDbContext.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAYwB4AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABkAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-05T07:28:53.736Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
+              "Title": "ObjectMaster.cs",
+              "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Entities\\ObjectMaster.cs",
+              "RelativeDocumentMoniker": "APL\\Entities\\ObjectMaster.cs",
+              "ToolTip": "C:\\Backend project\\project\\APL\\APL\\Entities\\ObjectMaster.cs",
+              "RelativeToolTip": "APL\\Entities\\ObjectMaster.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAABMAAABsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T06:40:51.716Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RolesMaster.cs",
+              "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Entities\\RolesMaster.cs",
+              "RelativeDocumentMoniker": "APL\\Entities\\RolesMaster.cs",
+              "ToolTip": "C:\\Backend project\\project\\APL\\APL\\Entities\\RolesMaster.cs",
+              "RelativeToolTip": "APL\\Entities\\RolesMaster.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAgwBMAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T08:47:17.186Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "IUserManagementService.cs",
               "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Services\\IUserManagementService.cs",
               "RelativeDocumentMoniker": "APL\\Services\\IUserManagementService.cs",
@@ -145,25 +188,24 @@
               "RelativeToolTip": "APL\\Services\\IUserManagementService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-05T09:22:34.884Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-05T09:22:34.884Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "UserManagementController.cs",
               "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Controllers\\UserManagementController.cs",
               "RelativeDocumentMoniker": "APL\\Controllers\\UserManagementController.cs",
               "ToolTip": "C:\\Backend project\\project\\APL\\APL\\Controllers\\UserManagementController.cs",
               "RelativeToolTip": "APL\\Controllers\\UserManagementController.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAAAB8AAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAAAACYAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-05T09:17:00.3Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "PerspectiveDto.cs",
               "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Dto\\PerspectiveDto.cs",
               "RelativeDocumentMoniker": "APL\\Dto\\PerspectiveDto.cs",
@@ -171,12 +213,11 @@
               "RelativeToolTip": "APL\\Dto\\PerspectiveDto.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAAAAYAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-05T09:49:51.369Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-05T09:49:51.369Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "DepartmentMaster.cs",
               "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Entities\\DepartmentMaster.cs",
               "RelativeDocumentMoniker": "APL\\Entities\\DepartmentMaster.cs",
@@ -184,25 +225,11 @@
               "RelativeToolTip": "APL\\Entities\\DepartmentMaster.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAAAAwAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-05T06:43:36.745Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-05T06:43:36.745Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "UserManagement.cs",
-              "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Entities\\UserManagement.cs",
-              "RelativeDocumentMoniker": "APL\\Entities\\UserManagement.cs",
-              "ToolTip": "C:\\Backend project\\project\\APL\\APL\\Entities\\UserManagement.cs",
-              "RelativeToolTip": "APL\\Entities\\UserManagement.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAABYAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-05T07:14:13.675Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Program.cs",
               "RelativeDocumentMoniker": "APL\\Program.cs",
@@ -210,12 +237,11 @@
               "RelativeToolTip": "APL\\Program.cs",
               "ViewState": "AgIAACsAAAAAAAAAAAAUwDwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-05T09:28:07.12Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-05T09:28:07.12Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "FormMasterService.cs",
               "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Services\\FormMasterService.cs",
               "RelativeDocumentMoniker": "APL\\Services\\FormMasterService.cs",
@@ -223,12 +249,11 @@
               "RelativeToolTip": "APL\\Services\\FormMasterService.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAACAAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-16T06:45:35.098Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-16T06:45:35.098Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "PerspectiveMasterService.cs",
               "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Services\\PerspectiveMasterService.cs",
               "RelativeDocumentMoniker": "APL\\Services\\PerspectiveMasterService.cs",
@@ -236,12 +261,11 @@
               "RelativeToolTip": "APL\\Services\\PerspectiveMasterService.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAADwvxEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-16T07:06:35.19Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-16T07:06:35.19Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "PerspectiveMasterController.cs",
               "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Controllers\\PerspectiveMasterController.cs",
               "RelativeDocumentMoniker": "APL\\Controllers\\PerspectiveMasterController.cs",
@@ -249,12 +273,11 @@
               "RelativeToolTip": "APL\\Controllers\\PerspectiveMasterController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-16T06:47:35.213Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-16T06:47:35.213Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "IPerspectiveMasterService.cs",
               "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Services\\IPerspectiveMasterService.cs",
               "RelativeDocumentMoniker": "APL\\Services\\IPerspectiveMasterService.cs",
@@ -262,12 +285,11 @@
               "RelativeToolTip": "APL\\Services\\IPerspectiveMasterService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-16T06:56:02.827Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-16T06:56:02.827Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "Perspective.cs",
               "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Entities\\Perspective.cs",
               "RelativeDocumentMoniker": "APL\\Entities\\Perspective.cs",
@@ -275,12 +297,11 @@
               "RelativeToolTip": "APL\\Entities\\Perspective.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAAABAAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-05T07:27:32.376Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-05T07:27:32.376Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "StrategicObjective.cs",
               "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Entities\\StrategicObjective.cs",
               "RelativeDocumentMoniker": "APL\\Entities\\StrategicObjective.cs",
@@ -288,12 +309,11 @@
               "RelativeToolTip": "APL\\Entities\\StrategicObjective.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAAAA8AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-05T07:27:26.832Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-05T07:27:26.832Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "JwtHelper.cs",
               "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Shared\\JwtHelper.cs",
               "RelativeDocumentMoniker": "APL\\Shared\\JwtHelper.cs",
@@ -305,7 +325,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\appsettings.Development.json",
               "RelativeDocumentMoniker": "APL\\appsettings.Development.json",
@@ -317,7 +337,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\appsettings.json",
               "RelativeDocumentMoniker": "APL\\appsettings.json",
@@ -329,7 +349,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "FormMaster.cs",
               "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Entities\\FormMaster.cs",
               "RelativeDocumentMoniker": "APL\\Entities\\FormMaster.cs",
@@ -341,19 +361,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "ObjectMaster.cs",
-              "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Entities\\ObjectMaster.cs",
-              "RelativeDocumentMoniker": "APL\\Entities\\ObjectMaster.cs",
-              "ToolTip": "C:\\Backend project\\project\\APL\\APL\\Entities\\ObjectMaster.cs",
-              "RelativeToolTip": "APL\\Entities\\ObjectMaster.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAxwBMAAABqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-05T06:40:51.716Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "FormController.cs",
               "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Controllers\\FormController.cs",
               "RelativeDocumentMoniker": "APL\\Controllers\\FormController.cs",

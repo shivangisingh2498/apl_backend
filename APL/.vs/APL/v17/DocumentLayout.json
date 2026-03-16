@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Backend project\\project\\APL\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|c:\\backend project\\project\\apl\\apl\\controllers\\usermanagementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|solutionrelative:apl\\controllers\\usermanagementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|c:\\backend project\\project\\apl\\apl\\services\\usermanagementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|solutionrelative:apl\\services\\usermanagementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -25,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|c:\\backend project\\project\\apl\\apl\\entities\\rolesmaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|solutionrelative:apl\\entities\\rolesmaster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|c:\\backend project\\project\\apl\\apl\\controllers\\usermanagementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|solutionrelative:apl\\controllers\\usermanagementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|c:\\backend project\\project\\apl\\apl\\services\\iusermanagementservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -98,50 +98,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UserManagementService.cs",
-              "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Services\\UserManagementService.cs",
-              "RelativeDocumentMoniker": "APL\\Services\\UserManagementService.cs",
-              "ToolTip": "C:\\Backend project\\project\\APL\\APL\\Services\\UserManagementService.cs",
-              "RelativeToolTip": "APL\\Services\\UserManagementService.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAUwDsAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-05T09:21:49.659Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UserManagementDto.cs",
-              "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Dto\\UserManagementDto.cs",
-              "RelativeDocumentMoniker": "APL\\Dto\\UserManagementDto.cs",
-              "ToolTip": "C:\\Backend project\\project\\APL\\APL\\Dto\\UserManagementDto.cs",
-              "RelativeToolTip": "APL\\Dto\\UserManagementDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-05T09:50:13.085Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserManagement.cs",
-              "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Entities\\UserManagement.cs",
-              "RelativeDocumentMoniker": "APL\\Entities\\UserManagement.cs",
-              "ToolTip": "C:\\Backend project\\project\\APL\\APL\\Entities\\UserManagement.cs",
-              "RelativeToolTip": "APL\\Entities\\UserManagement.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABUAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-05T07:14:13.675Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "AplDbContext.cs",
               "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Context\\AplDbContext.cs",
               "RelativeDocumentMoniker": "APL\\Context\\AplDbContext.cs",
@@ -154,7 +115,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ObjectMaster.cs",
               "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Entities\\ObjectMaster.cs",
               "RelativeDocumentMoniker": "APL\\Entities\\ObjectMaster.cs",
@@ -167,7 +128,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "RolesMaster.cs",
               "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Entities\\RolesMaster.cs",
               "RelativeDocumentMoniker": "APL\\Entities\\RolesMaster.cs",
@@ -192,15 +153,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "UserManagementController.cs",
               "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Controllers\\UserManagementController.cs",
               "RelativeDocumentMoniker": "APL\\Controllers\\UserManagementController.cs",
               "ToolTip": "C:\\Backend project\\project\\APL\\APL\\Controllers\\UserManagementController.cs",
               "RelativeToolTip": "APL\\Controllers\\UserManagementController.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAAACYAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAAAAB8AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-05T09:17:00.3Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserManagement.cs",
+              "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Entities\\UserManagement.cs",
+              "RelativeDocumentMoniker": "APL\\Entities\\UserManagement.cs",
+              "ToolTip": "C:\\Backend project\\project\\APL\\APL\\Entities\\UserManagement.cs",
+              "RelativeToolTip": "APL\\Entities\\UserManagement.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABUAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T07:14:13.675Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserManagementService.cs",
+              "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Services\\UserManagementService.cs",
+              "RelativeDocumentMoniker": "APL\\Services\\UserManagementService.cs",
+              "ToolTip": "C:\\Backend project\\project\\APL\\APL\\Services\\UserManagementService.cs",
+              "RelativeToolTip": "APL\\Services\\UserManagementService.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAUwDsAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T09:21:49.659Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserManagementDto.cs",
+              "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Dto\\UserManagementDto.cs",
+              "RelativeDocumentMoniker": "APL\\Dto\\UserManagementDto.cs",
+              "ToolTip": "C:\\Backend project\\project\\APL\\APL\\Dto\\UserManagementDto.cs",
+              "RelativeToolTip": "APL\\Dto\\UserManagementDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T09:50:13.085Z",
               "EditorCaption": ""
             },
             {
