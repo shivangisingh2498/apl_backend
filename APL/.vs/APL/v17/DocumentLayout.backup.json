@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Backend project\\project\\APL\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|c:\\backend project\\project\\apl\\apl\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|solutionrelative:apl\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|c:\\backend project\\project\\apl\\apl\\services\\bsctemplateservice..cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|solutionrelative:apl\\services\\bsctemplateservice..cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|c:\\backend project\\project\\apl\\apl\\controllers\\bsctemplatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|solutionrelative:apl\\controllers\\bsctemplatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|c:\\backend project\\project\\apl\\apl\\services\\ibsctemplateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|solutionrelative:apl\\services\\ibsctemplateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|c:\\backend project\\project\\apl\\apl\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|solutionrelative:apl\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|c:\\backend project\\project\\apl\\apl\\services\\bsctemplateservice..cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|solutionrelative:apl\\services\\bsctemplateservice..cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|c:\\backend project\\project\\apl\\apl\\services\\ibsctemplateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|solutionrelative:apl\\services\\ibsctemplateservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4C42DD1D-DE0F-4435-9FFE-808D6355C14A}|APL\\APL.csproj|c:\\backend project\\project\\apl\\apl\\services\\iformmasterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -122,37 +122,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IFormMasterService.cs",
-              "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Services\\IFormMasterService.cs",
-              "RelativeDocumentMoniker": "APL\\Services\\IFormMasterService.cs",
-              "ToolTip": "C:\\Backend project\\project\\APL\\APL\\Services\\IFormMasterService.cs",
-              "RelativeToolTip": "APL\\Services\\IFormMasterService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-16T10:49:48.289Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "BscTemplateService..cs",
-              "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Services\\BscTemplateService..cs",
-              "RelativeDocumentMoniker": "APL\\Services\\BscTemplateService..cs",
-              "ToolTip": "C:\\Backend project\\project\\APL\\APL\\Services\\BscTemplateService..cs",
-              "RelativeToolTip": "APL\\Services\\BscTemplateService..cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-16T10:37:26.571Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "IBscTemplateService.cs",
               "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Services\\IBscTemplateService.cs",
               "RelativeDocumentMoniker": "APL\\Services\\IBscTemplateService.cs",
@@ -171,7 +145,7 @@
               "RelativeDocumentMoniker": "APL\\Controllers\\BscTemplateController.cs",
               "ToolTip": "C:\\Backend project\\project\\APL\\APL\\Controllers\\BscTemplateController.cs",
               "RelativeToolTip": "APL\\Controllers\\BscTemplateController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAmwB8AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-16T10:31:47.926Z",
               "EditorCaption": ""
@@ -204,7 +178,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Program.cs",
               "RelativeDocumentMoniker": "APL\\Program.cs",
@@ -213,6 +187,32 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-05T09:28:07.12Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BscTemplateService..cs",
+              "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Services\\BscTemplateService..cs",
+              "RelativeDocumentMoniker": "APL\\Services\\BscTemplateService..cs",
+              "ToolTip": "C:\\Backend project\\project\\APL\\APL\\Services\\BscTemplateService..cs",
+              "RelativeToolTip": "APL\\Services\\BscTemplateService..cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T10:37:26.571Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IFormMasterService.cs",
+              "DocumentMoniker": "C:\\Backend project\\project\\APL\\APL\\Services\\IFormMasterService.cs",
+              "RelativeDocumentMoniker": "APL\\Services\\IFormMasterService.cs",
+              "ToolTip": "C:\\Backend project\\project\\APL\\APL\\Services\\IFormMasterService.cs",
+              "RelativeToolTip": "APL\\Services\\IFormMasterService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T10:49:48.289Z",
               "EditorCaption": ""
             },
             {
