@@ -75,18 +75,4 @@ app.UseAuthentication(); // 1st: Identify who the user is
 app.UseAuthorization();  // 2nd: Check what the user is allowed to do
 
 app.MapControllers();
-
-// --- 5. Debug Endpoint ---
-// Use this to verify your claims: http://localhost:PORT/debug/me
-app.MapGet("/debug/me", (ClaimsPrincipal user) =>
-{
-    return Results.Ok(new
-    {
-        isAuthenticated = user.Identity?.IsAuthenticated ?? false,
-        userName = user.Identity?.Name,
-        roles = user.Claims.Where(c => c.Type == "roles").Select(c => c.Value).ToList(),
-        allClaims = user.Claims.Select(c => new { c.Type, c.Value })
-    });
-}).RequireAuthorization();
-
 app.Run();

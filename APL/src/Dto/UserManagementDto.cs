@@ -8,6 +8,7 @@ namespace APL.Models
         public List<UserManagementDto>?  userList { get; set; }
         public List<DepartmentMasterDto>? departmentList { get; set; }
         public List<RolesDto>? rolesList { get; set; }
+        public List<StationDto>? stationList { get; set; }
     }
 
     public class UserManagementDto
@@ -32,6 +33,8 @@ namespace APL.Models
         [Required]
         public string? supervisor { get; set; }
         [Required]
+        public int stationid { get; set; }
+        [Required]
         public int typeId { get; set; }
     }
 
@@ -50,4 +53,9 @@ namespace APL.Models
         public string? description { get; set; }
     }
 
+    public class StationDto
+    {
+        public int id { get; set; }
+        public string? station { get; set; }
+    }
 }

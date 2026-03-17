@@ -1,23 +1,25 @@
-# Visual Studio solution-level cache (your path is APL/.vs/)
+# Ignore entire VS working directory
+.vs/
 APL/.vs/
 
-# Build outputs anywhere under APL/
-APL/**/bin/
-APL/**/obj/
-
-# Copilot / IntelliCode indices (belt-and-braces)
-APL/**/CopilotIndices/
-APL/**/SemanticSymbols.db
-APL/**/CodeChunks.db
-APL/**/.vsidx
-APL/**/*.db
-APL/**/*.db-shm
-APL/**/*.db-wal
-
-# General (good practice)
-.vscode/
-*.user
+# Visual Studio generated files
 *.suo
-*.nupkg
-TestResults/
-artifacts/
+*.user
+*.userosscache
+*.sln.docstates
+
+# VS design-time & IntelliSense caches
+*.db
+*.db-shm
+*.db-wal
+*.v17
+DesignTimeBuild/
+*.vsidx
+
+# Copilot
+CopilotIndices/
+APL/**/CopilotIndices/
+
+# Layout files
+DocumentLayout.json
+*.json

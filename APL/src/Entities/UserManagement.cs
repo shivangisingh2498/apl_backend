@@ -12,6 +12,7 @@ namespace APL.Entities
         public string? name { get; set; } 
         public string? email { get; set; } 
         public int departmentid { get; set; }
+        public int stationid { get; set; }
         public string? supervisor { get; set; }
         public int typeid { get; set; }
         public bool isactive { get; set; } = true;
@@ -21,6 +22,7 @@ namespace APL.Entities
         public DateTime? updatedon { get; set; }
         public RolesMaster? tbl_roles_master { get; set; }
         public DepartmentMaster? tbl_department_master { get; set; }
+        public StationMaster? tbl_station_master { get; set; }
     }
 
 }

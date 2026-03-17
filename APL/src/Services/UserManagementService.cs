@@ -53,11 +53,22 @@ namespace APL.Services
               .OrderByDescending(f => f.id)
               .ToListAsync();
 
+            List<StationDto>? stationList = await _db.tbl_station_master.AsNoTracking()
+               .Where(x => x.isactive).Select(x => new StationDto
+               {
+                   id = x.id,
+                   station = x.station
+               })
+              .AsNoTracking()
+              .OrderByDescending(f => f.id)
+              .ToListAsync();
+
             UserDepartmentDto result = new UserDepartmentDto
             {
                 userList = userList,
                 departmentList = departmentList,
-                rolesList = rolesList
+                rolesList = rolesList,
+                stationList = stationList
             };
 
             return result;
@@ -74,6 +85,7 @@ namespace APL.Services
                 email = dto?.email?.Trim(),
                 departmentid = dto.departmentId,
                 typeid = dto.typeId,
+                stationid = dto.stationid,
                 supervisor = string.IsNullOrWhiteSpace(dto.supervisor) ? null : dto.supervisor.Trim(),
                 isactive = true,
                 createdon = DateTime.UtcNow,

@@ -16,12 +16,10 @@ namespace APL.Controllers
     {
 
         private readonly IUserManagementService _service;
-        private readonly ILogger<UserManagementController> _logger;
 
-        public UserManagementController(IUserManagementService service, ILogger<UserManagementController> logger)
+        public UserManagementController(IUserManagementService service)
         {
             _service = service;
-            _logger = logger;
         }
 
         // GET: api/UserManagement/GetAllUsers
