@@ -18,6 +18,7 @@ builder.Services.AddControllers();
 builder.Services.AddScoped<IFormMasterService, FormMasterService>();
 builder.Services.AddScoped<IBscTemplateService, BscTemplateService>();
 builder.Services.AddScoped<IUserManagementService, UserManagementService>();
+builder.Services.AddScoped<IMasterDataService, MasterDataService>();
 builder.Services.AddTransient<ExceptionHandlingMiddleware>();
 
 // --- 3. Authentication & JWT Configuration ---

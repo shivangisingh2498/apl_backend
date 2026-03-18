@@ -5,7 +5,6 @@ using APL.Shared;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace APL.Controllers
 {
@@ -64,7 +63,7 @@ namespace APL.Controllers
 
             CustomResponse<bool> dto = new CustomResponse<bool>
             {
-                status = "success",
+                status = result ? "Success" : "Failure",
                 data = result
             };
 
@@ -80,7 +79,7 @@ namespace APL.Controllers
 
             CustomResponse<bool> dto = new CustomResponse<bool>
             {
-                status = "success",
+                status = result ? "Success" : "Failure",
                 data = result
             };
 
