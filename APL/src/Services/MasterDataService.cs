@@ -153,5 +153,24 @@ namespace APL.Services
             return false;
 
         }
+
+        public async Task<List<KpiDto>> GetKpiList()
+        {
+            List<KpiDto> kpiList = await _db.tbl_kpi_master.Where(x => x.isactive).Select(x =>
+                new KpiDto
+                {
+                    id = x.id,
+                    kpiname = x.kpiname,
+                    definition = x.definition,
+                    formula = x.formula,
+                    uom = x.uom,
+                    isbetter = x.isbetter
+                }
+                ).ToListAsync();
+
+
+            return kpiList;
+        }
+
     }
 }

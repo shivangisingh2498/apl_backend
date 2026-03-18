@@ -151,6 +151,23 @@ namespace APL.Controllers
         }
 
 
+        [HttpGet]
+        public async Task<IActionResult> GetKpi()
+        {
+
+            List<KpiDto> result = await _service.GetKpiList();
+
+            var dto = new CustomResponse<List<KpiDto>>
+            {
+                status = "success",
+                data = result
+            };
+
+            return Ok(dto);
+
+
+        }
+
 
     }
 }

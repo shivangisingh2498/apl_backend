@@ -22,14 +22,14 @@ namespace APL.Controllers
             _service = service;
         }
 
-        // GET: api/BscTemplate/GetAllBU
+        // GET: api/BscTemplate/GetBscList
         [HttpGet]
-        public async Task<IActionResult> GetAllBU()
+        public async Task<IActionResult> GetBscList()
         {
 
-            List<DepartmentMasterDto> result = await _service.GetBUList();
+            StationDepartmentDto result = await _service.GetBscList();
 
-            var dto = new CustomResponse<List<DepartmentMasterDto>>
+            var dto = new CustomResponse<StationDepartmentDto>
             {
                 status = "success",
                 data = result

@@ -3,6 +3,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace APL.Models
 {
+    public class StationDepartmentDto
+    {
+        public List<DepartmentMasterDto>? departmentList { get; set; }
+        public List<StationDto>? stationList { get; set; }
+    }
     public class UserDepartmentDto
     {
         public List<UserManagementDto>?  userList { get; set; }

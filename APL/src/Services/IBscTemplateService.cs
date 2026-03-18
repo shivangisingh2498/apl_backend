@@ -5,6 +5,6 @@ namespace APL.Services
 {
     public interface IBscTemplateService
     {
-        Task<List<DepartmentMasterDto>> GetBUList();
+        Task<StationDepartmentDto> GetBscList();
     }
 }

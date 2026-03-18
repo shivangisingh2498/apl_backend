@@ -47,6 +47,7 @@ namespace APL.Data
         public DbSet<UserManagement> tbl_user_management { get; set; }
         public DbSet<RolesMaster> tbl_roles_master { get; set; }
         public DbSet<StationMaster> tbl_station_master { get; set; }
+        public DbSet<KpiMaster> tbl_kpi_master { get; set; }
     }
 
 }

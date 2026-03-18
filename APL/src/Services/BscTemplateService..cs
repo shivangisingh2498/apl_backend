@@ -17,21 +17,36 @@ namespace APL.Services
             _db = db;
         }
 
-        public async Task<List<DepartmentMasterDto>> GetBUList()
+        public async Task<StationDepartmentDto> GetBscList()
         {
             List<DepartmentMasterDto> result = await _db.tbl_department_master
-                .AsNoTracking().Where(x=>x.isactive).Select(x=> new DepartmentMasterDto
+                .AsNoTracking().Where(x => x.isactive).Select(x => new DepartmentMasterDto
                 {
                     id = x.id,
                     department = x.department,
-                    departmentName = x.departmentname                   
+                    departmentName = x.departmentname
                 })
                .AsNoTracking()
                .OrderBy(f => f.id)
                .ToListAsync();
 
-            return result;
-        }
+            List<StationDto> stationList = await _db.tbl_station_master
+             .AsNoTracking().Where(x => x.isactive && x.station!="Default").Select(x => new StationDto
+             {
+                 id = x.id,
+                 station = x.station,
+             })
+            .AsNoTracking()
+            .OrderBy(f => f.id)
+            .ToListAsync();
 
+
+            return new StationDepartmentDto
+            {
+                departmentList = result,
+                stationList = stationList
+
+            };
+        }
     }
 }

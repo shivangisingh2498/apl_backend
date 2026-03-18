@@ -15,6 +15,7 @@ namespace APL.Services
         public Task<bool> DeleteStrategicObjective(StrategicObjectiveDto dto);
         public Task<List<StrategicObjectiveDto>> GetAllStrategicObjective();
         public Task<bool> UpdateStrategicObjective(StrategicObjectiveDto dto);
+        public Task<List<KpiDto>> GetKpiList();
 
 
     }
