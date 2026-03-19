@@ -12,7 +12,7 @@ namespace APL.Services
     {
         private readonly AplDbContext _db;
 
-        //-- perspective fuinctions
+        //-- perspective functions
         public MasterDataService(AplDbContext db)
         {
             _db = db;
@@ -156,7 +156,7 @@ namespace APL.Services
 
         public async Task<List<KpiDto>> GetKpiList()
         {
-            List<KpiDto> kpiList = await _db.tbl_kpi_master.Where(x => x.isactive).Select(x =>
+            List<KpiDto> kpiList = await _db.tbl_kpi_master.AsNoTracking().Where(x => x.isactive).Select(x =>
                 new KpiDto
                 {
                     id = x.id,

@@ -40,7 +40,24 @@ namespace APL.Controllers
 
         }
 
-        
+        [HttpGet]
+        public async Task<IActionResult> GetBscTemplateDropdown()
+        {
+
+            CreateTemplateDropdownDto result = await _service.GetBscTemplateDropdown();
+
+            var dto = new CustomResponse<CreateTemplateDropdownDto>
+            {
+                status = "success",
+                data = result
+            };
+
+            return Ok(dto);
+
+
+        }
+
+
 
     }
 }

@@ -11,10 +11,12 @@ namespace APL.Services
     public class BscTemplateService : IBscTemplateService
     {
         private readonly AplDbContext _db;
+        private readonly IDbContextFactory<AplDbContext> _contextFactory;
 
-        public BscTemplateService(AplDbContext db)
+        public BscTemplateService(AplDbContext db, IDbContextFactory<AplDbContext> contextFactory)
         {
             _db = db;
+            _contextFactory = contextFactory;
         }
 
         public async Task<StationDepartmentDto> GetBscList()
@@ -47,6 +49,63 @@ namespace APL.Services
                 stationList = stationList
 
             };
+        }
+
+        public async Task<CreateTemplateDropdownDto> GetBscTemplateDropdown()
+        {
+
+
+            AplDbContext context1 = _contextFactory.CreateDbContext();
+            AplDbContext context2 = _contextFactory.CreateDbContext();
+            AplDbContext context3 = _contextFactory.CreateDbContext();
+
+            Task<List<PerspectiveDto>> perspectiveTask =
+                context1.tbl_perspective
+                    .Where(x => x.isactive)
+                    .OrderBy(x => x.id)
+                    .Select(x => new PerspectiveDto
+                    {
+                        id = x.id,
+                        perspective = x.perspective
+                    })
+                    .AsNoTracking()
+                    .ToListAsync();
+
+            Task<List<StrategicObjectiveDto>> objectiveTask =
+                context2.tbl_strategic_objective
+                    .Where(x => x.isactive)
+                    .OrderBy(x => x.id)
+                    .Select(x => new StrategicObjectiveDto
+                    {
+                        id = x.id,
+                        objective = x.strategicobjective
+                    })
+                    .AsNoTracking()
+                    .ToListAsync();
+
+            Task<List<KpiDetailsDto>> kpiTask =
+                context3.tbl_kpi_master
+                    .Where(x => x.isactive)
+                    .OrderBy(x => x.id)
+                    .Select(x => new KpiDetailsDto
+                    {
+                        id = x.id,
+                        kpiname = x.kpiname
+                    })
+                    .AsNoTracking()
+                    .ToListAsync();
+
+            await Task.WhenAll(perspectiveTask, objectiveTask, kpiTask);
+
+            CreateTemplateDropdownDto response = new CreateTemplateDropdownDto
+            {
+                perspectiveList = perspectiveTask.Result,
+                strategicObjectiveList = objectiveTask.Result,
+                kpiDetailsDtos = kpiTask.Result
+            };
+
+            return response;
+
         }
     }
 }

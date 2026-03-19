@@ -10,8 +10,23 @@ using System.Security.Claims;
 var builder = WebApplication.CreateBuilder(args);
 
 // --- 1. Database Configuration ---
+
+// Scoped DbContext for normal usage
 builder.Services.AddDbContext<AplDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+{
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
+},
+contextLifetime: ServiceLifetime.Scoped,
+optionsLifetime: ServiceLifetime.Singleton);
+
+// Factory for parallel operations
+builder.Services.AddDbContextFactory<AplDbContext>(options =>
+{
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+
+
+
 
 // --- 2. Dependency Injection Services ---
 builder.Services.AddControllers();

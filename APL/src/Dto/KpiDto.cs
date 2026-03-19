@@ -12,4 +12,11 @@ namespace APL.Models
         public string? uom { get; set; }
         public bool isbetter { get; set; }
     }
+    public class KpiDetailsDto
+    {
+        public int id { get; set; }
+        public string? kpiname { get; set; }
+    }
+
+
 }

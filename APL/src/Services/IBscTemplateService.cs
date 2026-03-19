@@ -6,5 +6,6 @@ namespace APL.Services
     public interface IBscTemplateService
     {
         Task<StationDepartmentDto> GetBscList();
+        Task<CreateTemplateDropdownDto> GetBscTemplateDropdown();
     }
 }
