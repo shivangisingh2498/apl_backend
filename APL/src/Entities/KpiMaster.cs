@@ -19,7 +19,7 @@ namespace APL.Entities
         public DateTime? createdon { get; set; }
         public string? updatedby { get; set; }
         public DateTime? updatedon { get; set; }
-        public ICollection<BscKpi>? tbl_bsc_kpi { get; set; } = new List<BscKpi>();
+        public ICollection<BscKpi> tbl_bsc_kpi { get; set; } = new List<BscKpi>();
     }
 
 }

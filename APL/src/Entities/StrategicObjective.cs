@@ -14,7 +14,7 @@ namespace APL.Entities
         public DateTime? createdon { get; set; }
         public string? updatedby { get; set; }
         public DateTime? updatedon { get; set; }
-        public ICollection<BscStrategicObjective>? tbl_strategic_objective { get; set; } = new List<BscStrategicObjective>();
+        public ICollection<BscStrategicObjective> tbl_strategic_objective { get; set; } = new List<BscStrategicObjective>();
     }
 
 }

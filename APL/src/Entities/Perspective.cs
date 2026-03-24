@@ -15,7 +15,7 @@ namespace APL.Entities
         public DateTime? createdon { get; set; }
         public string? updatedby { get; set; }
         public DateTime? updatedon { get; set; }
-        public ICollection<BscPerspective>? tbl_bsc_perspective { get; set; } =  new List<BscPerspective>();
+        public ICollection<BscPerspective> tbl_bsc_perspective { get; set; } =  new List<BscPerspective>();
     }
 
 }

@@ -31,7 +31,7 @@ namespace APL.Controllers
 
             var dto = new CustomResponse<StationDepartmentDto>
             {
-                status = "success",
+                status = "Success",
                 data = result
             };
 
@@ -48,7 +48,7 @@ namespace APL.Controllers
 
             var dto = new CustomResponse<CreateTemplateDropdownDto>
             {
-                status = "success",
+                status = "Success",
                 data = result
             };
 
@@ -63,7 +63,22 @@ namespace APL.Controllers
 
             var dto = new CustomResponse<ResultDto>
             {
-                status = "success",
+                status = "Success",
+                data = result
+            };
+
+            return Ok(dto);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> GetBscTemplateById(SelectPerspectiveKpiDto bsc)
+        {
+
+            ResultDto result = await _service.GetBscTemplateById(bsc);
+
+            var dto = new CustomResponse<ResultDto>
+            {
+                status = "Success",
                 data = result
             };
 

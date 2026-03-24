@@ -17,7 +17,7 @@ namespace APL.Entities
         public DateTime? updatedon { get; set; }
         public BscFormHeader? tbl_bsc_form_header { get; set; }
         public Perspective? tbl_perspective { get; set; }
-        public ICollection<BscStrategicObjective>? tbl_bsc_strategic_objective { get; set; } = new List<BscStrategicObjective>();
+        public ICollection<BscStrategicObjective> tbl_bsc_strategic_objective { get; set; } = new List<BscStrategicObjective>();
     }
 
 }

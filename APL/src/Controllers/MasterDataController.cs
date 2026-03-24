@@ -31,7 +31,7 @@ namespace APL.Controllers
 
             var dto = new CustomResponse<List<PerspectiveDto>>
             {
-                status = "success",
+                status = "Success",
                 data = result
             };
 
@@ -47,7 +47,7 @@ namespace APL.Controllers
 
             CustomResponse<long> dto = new CustomResponse<long>
             {
-                status = "success",
+                status = "Success",
                 data = result
             };
 
@@ -63,7 +63,7 @@ namespace APL.Controllers
 
             CustomResponse<bool> dto = new CustomResponse<bool>
             {
-                status = result ? "Success" : "Failure",
+                status = result ? "" : "Failure",
                 data = result
             };
 
@@ -79,7 +79,7 @@ namespace APL.Controllers
 
             CustomResponse<bool> dto = new CustomResponse<bool>
             {
-                status = result ? "Success" : "Failure",
+                status = result ? "" : "Failure",
                 data = result
             };
 
@@ -95,7 +95,7 @@ namespace APL.Controllers
 
             var dto = new CustomResponse<List<StrategicObjectiveDto>>
             {
-                status = "success",
+                status = "Success",
                 data = result
             };
 
@@ -111,7 +111,7 @@ namespace APL.Controllers
 
             CustomResponse<long> dto = new CustomResponse<long>
             {
-                status = "success",
+                status = "Success",
                 data = result
             };
 
@@ -127,7 +127,7 @@ namespace APL.Controllers
 
             CustomResponse<bool> dto = new CustomResponse<bool>
             {
-                status = result ? "Success" : "Failure",
+                status = result ? "" : "Failure",
                 data = result
             };
 
@@ -143,7 +143,7 @@ namespace APL.Controllers
 
             CustomResponse<bool> dto = new CustomResponse<bool>
             {
-                status = result ? "Success" : "Failure",
+                status = result ? "" : "Failure",
                 data = result
             };
 
@@ -159,7 +159,7 @@ namespace APL.Controllers
 
             var dto = new CustomResponse<List<KpiDto>>
             {
-                status = "success",
+                status = "Success",
                 data = result
             };
 

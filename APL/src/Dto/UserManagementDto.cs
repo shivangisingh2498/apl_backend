@@ -62,5 +62,6 @@ namespace APL.Models
     {
         public int id { get; set; }
         public string? station { get; set; }
+        public bool isActive { get; set; }
     }
 }

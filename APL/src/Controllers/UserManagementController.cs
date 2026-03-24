@@ -30,7 +30,7 @@ namespace APL.Controllers
 
             var dto = new CustomResponse<UserDepartmentDto>
             {
-                status = "success",
+                status = "Success",
                 data = result
             };
 
@@ -47,7 +47,7 @@ namespace APL.Controllers
 
             CustomResponse<int> dto = new CustomResponse<int>
             {
-                status = "success",
+                status = "Success",
                 data = result
             };
 
@@ -63,7 +63,7 @@ namespace APL.Controllers
 
             CustomResponse<bool> dto = new CustomResponse<bool>
             {
-                status = result ? "Success" : "Failure",
+                status = result ? "" : "Failure",
                 data = result
             };
 
@@ -79,7 +79,7 @@ namespace APL.Controllers
 
             CustomResponse<bool> dto = new CustomResponse<bool>
             {
-                status = result ? "Success" : "Failure",
+                status = result ? "" : "Failure",
                 data = result
             };
 

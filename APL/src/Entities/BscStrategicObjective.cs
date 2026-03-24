@@ -19,7 +19,7 @@ namespace APL.Entities
         public BscFormHeader? tbl_bsc_form_header { get; set; }
         public StrategicObjective? tbl_strategic_objective { get; set; }
         public BscPerspective? tbl_bsc_perspective { get; set; }
-        public ICollection<BscKpi>? tbl_bsc_kpi { get; set; }
+        public ICollection<BscKpi> tbl_bsc_kpi { get; set; } = new List<BscKpi>();
     }
 
 }

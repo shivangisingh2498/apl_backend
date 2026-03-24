@@ -9,5 +9,6 @@ namespace APL.Services
         Task<StationDepartmentDto> GetBscList();
         Task<CreateTemplateDropdownDto> GetBscTemplateDropdown();
         Task<ResultDto> SaveBscTemplate(SelectPerspectiveKpiDto bsc);
+        Task<ResultDto> GetBscTemplateById(SelectPerspectiveKpiDto bsc);
     }
 }
