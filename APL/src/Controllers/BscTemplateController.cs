@@ -53,8 +53,21 @@ namespace APL.Controllers
             };
 
             return Ok(dto);
+        }
 
+        [HttpPost]
+        public async Task<IActionResult> SaveBscTemplate(SelectPerspectiveKpiDto bsc)
+        {
 
+            ResultDto result = await _service.SaveBscTemplate(bsc);
+
+            var dto = new CustomResponse<ResultDto>
+            {
+                status = "success",
+                data = result
+            };
+
+            return Ok(dto);
         }
 
 

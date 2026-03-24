@@ -13,9 +13,9 @@ namespace APL.Entities
         public string description { get; set; } = null!;
         public bool isactive { get; set; } = true;
         public string? createdby { get; set; }
-        public DateTimeOffset? createdon { get; set; }
+        public DateTime? createdon { get; set; }
         public string? updatedby { get; set; }
-        public DateTimeOffset? updatedon { get; set; }
+        public DateTime? updatedon { get; set; }
         //[JsonIgnore]
         //public ICollection<UserManagement> tbl_user_management { get; set; } = new List<UserManagement>();
     }

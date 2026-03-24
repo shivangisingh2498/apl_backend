@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using APL.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace APL.Shared
 {
@@ -17,5 +18,10 @@ namespace APL.Shared
         public string? message { get; set; }
         public string? detail { get; set; }      
     }
-
+    public class ResultDto
+    {
+        public string? status { get; set; }
+        public string? message { get; set; }
+        public SelectPerspectiveKpiDto? formData { get; set; }
+    }
 }

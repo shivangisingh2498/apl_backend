@@ -1,8 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
 namespace APL.Entities
 {
+    [Table("tbl_station_master")]
     public class StationMaster
     {
         [Key]
@@ -15,5 +17,6 @@ namespace APL.Entities
         public DateTime? updatedon { get; set; }
         [JsonIgnore]
         public ICollection<UserManagement> tbl_user_management { get; set; } = new List<UserManagement>();
+        public ICollection<BscFormHeader> tbl_bsc_form_header { get; set; } = new List<BscFormHeader>();
     }
 }

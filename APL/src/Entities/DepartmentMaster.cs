@@ -18,6 +18,7 @@ namespace APL.Entities
         public DateTime? updatedon { get; set; }
         [JsonIgnore]
         public ICollection<UserManagement> tbl_user_management { get; set; } = new List<UserManagement>();
+        public ICollection<BscFormHeader> tbl_bsc_form_header { get; set; } = new List<BscFormHeader>();
     }
 
 }

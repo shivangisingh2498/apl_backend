@@ -7,13 +7,14 @@ namespace APL.Entities
     public class StrategicObjective
     {
         [Key]
-        public long id { get; set; }
+        public int id { get; set; }
         public string? strategicobjective { get; set; }
         public bool isactive { get; set; } = true;
         public string? createdby { get; set; }
         public DateTime? createdon { get; set; }
         public string? updatedby { get; set; }
         public DateTime? updatedon { get; set; }
+        public ICollection<BscStrategicObjective>? tbl_strategic_objective { get; set; } = new List<BscStrategicObjective>();
     }
 
 }
