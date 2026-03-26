@@ -55,8 +55,8 @@ namespace APL.Controllers
         }
 
 
-        [HttpDelete]
-        public async Task<IActionResult> DeletePerspective(PerspectiveDto perspective)
+        [HttpPost]
+        public async Task<IActionResult> DeletePerspective(DeleteIdDto perspective)
         {
 
             bool result = await _service.DeletePerspective(perspective);
@@ -119,8 +119,8 @@ namespace APL.Controllers
         }
 
 
-        [HttpDelete]
-        public async Task<IActionResult> DeleteStrategicObjective(StrategicObjectiveDto obj)
+        [HttpPost]
+        public async Task<IActionResult> DeleteStrategicObjective(DeleteIdDto obj)
         {
 
             bool result = await _service.DeleteStrategicObjective(obj);

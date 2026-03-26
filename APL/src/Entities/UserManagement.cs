@@ -15,7 +15,8 @@ namespace APL.Entities
         public int stationid { get; set; }
         public string? supervisor { get; set; }
         public int typeid { get; set; }
-        public bool isactive { get; set; } = true;
+        public bool isactive { get; set; }
+        public bool isdisable { get; set; }
         public string? createdby { get; set; }
         public DateTime? createdon { get; set; }
         public string? updatedby { get; set; }

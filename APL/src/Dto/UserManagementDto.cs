@@ -22,6 +22,7 @@ namespace APL.Models
         public string? name { get; set; }
         public string? email { get; set; }
         public string? departmentName { get; set; }
+        public string? stationName { get; set; }
         public string? supervisor { get; set; }
         public string? type { get; set; }
         public bool isActive { get; set; } = true;
@@ -42,7 +43,15 @@ namespace APL.Models
         [Required]
         public int typeId { get; set; }
     }
-
+    public class DeleteIdDto
+    {
+        public int id { get; set; }
+    }
+    public class DisableUserDto
+    {
+        public int id { get; set; }
+        public bool isDisable { get; set; }
+    }
     public class DepartmentMasterDto
     {
         public int id { get; set; }

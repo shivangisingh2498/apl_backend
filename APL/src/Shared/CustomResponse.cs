@@ -18,10 +18,10 @@ namespace APL.Shared
         public string? message { get; set; }
         public string? detail { get; set; }      
     }
-    public class ResultDto
+    public class ResultDto<T>
     {
         public string? status { get; set; }
         public string? message { get; set; }
-        public SelectPerspectiveKpiDto? formData { get; set; }
+        public T? result { get; set; }
     }
 }

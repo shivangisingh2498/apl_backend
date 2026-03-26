@@ -8,8 +8,9 @@ namespace APL.Services
         Task<UserDepartmentDto> GetAllUsers();
         public Task<int> CreateUser(UserCreateDto dto);
 
-        public Task<bool> DeleteUser(UserCreateDto dto);
+        public Task<bool> DeleteUser(DeleteIdDto dto);
 
         public Task<bool> UpdateUser(UserCreateDto dto);
+        public Task<bool> DisableEnableUser(DisableUserDto dto);
     }
 }

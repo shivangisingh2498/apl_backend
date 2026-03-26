@@ -47,7 +47,8 @@ namespace APL.Controllers
 
             CustomResponse<int> dto = new CustomResponse<int>
             {
-                status = "Success",
+                status = result != 0 ? "Success" : "Failure",
+                response = result != 0 ? "Success" : "User already exists.",
                 data = result
             };
 
@@ -55,15 +56,30 @@ namespace APL.Controllers
         }
 
 
-        [HttpDelete]
-        public async Task<IActionResult> DeleteUser(UserCreateDto user)
+        [HttpPost]
+        public async Task<IActionResult> DeleteUser(DeleteIdDto user)
         {
 
             bool result = await _service.DeleteUser(user);
 
             CustomResponse<bool> dto = new CustomResponse<bool>
             {
-                status = result ? "" : "Failure",
+                status = result ? "Success" : "Failure",
+                data = result
+            };
+
+            return Ok(dto);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DisableEnableUser(DisableUserDto user)
+        {
+
+            bool result = await _service.DisableEnableUser(user);
+
+            CustomResponse<bool> dto = new CustomResponse<bool>
+            {
+                status = result ? "Success" : "Failure",
                 data = result
             };
 
@@ -79,14 +95,11 @@ namespace APL.Controllers
 
             CustomResponse<bool> dto = new CustomResponse<bool>
             {
-                status = result ? "" : "Failure",
+                status = result ? "Success" : "Failure",
                 data = result
             };
 
             return Ok(dto);
         }
-
-
-
     }
 }

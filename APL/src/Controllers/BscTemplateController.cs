@@ -59,11 +59,11 @@ namespace APL.Controllers
         public async Task<IActionResult> SaveBscTemplate(SelectPerspectiveKpiDto bsc)
         {
 
-            ResultDto result = await _service.SaveBscTemplate(bsc);
+            ResultDto<SelectPerspectiveKpiDto> result = await _service.SaveBscTemplate(bsc);
 
-            var dto = new CustomResponse<ResultDto>
+            var dto = new CustomResponse<ResultDto<SelectPerspectiveKpiDto>>
             {
-                status = "Success",
+                status = result.status,
                 data = result
             };
 
@@ -74,11 +74,26 @@ namespace APL.Controllers
         public async Task<IActionResult> GetBscTemplateById(SelectPerspectiveKpiDto bsc)
         {
 
-            ResultDto result = await _service.GetBscTemplateById(bsc);
+            ResultDto<SelectPerspectiveKpiDto> result = await _service.GetBscTemplateById(bsc);
 
-            var dto = new CustomResponse<ResultDto>
+            var dto = new CustomResponse<ResultDto<SelectPerspectiveKpiDto>>
             {
-                status = "Success",
+                status = result.status,
+                data = result
+            };
+
+            return Ok(dto);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> GetSpocDetails(SelectPerspectiveKpiDto bsc)
+        {
+
+            ResultDto<List<UserManagementDto>> result = await _service.GetSpocDetails(bsc);
+
+            var dto = new CustomResponse<ResultDto<List<UserManagementDto>>>
+            {
+                status = result.status,
                 data = result
             };
 

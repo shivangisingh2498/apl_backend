@@ -19,13 +19,14 @@ namespace APL.Services
 
         public async Task<UserDepartmentDto> GetAllUsers()
         {
-            List<UserManagementDto>? userList = await _db.tbl_user_management.Include(x=>x.tbl_department_master).Include(x=>x.tbl_roles_master)
+            List<UserManagementDto>? userList = await _db.tbl_user_management.Include(x=>x.tbl_department_master).Include(x=>x.tbl_station_master).Include(x=>x.tbl_roles_master)
                 .AsNoTracking().Where(x=>x.isactive).Select(x=> new UserManagementDto
                 {
                     id = x.id,
                     name = x.name,
                     email = x.email,
                     departmentName = x.tbl_department_master.department,
+                    stationName = x.tbl_station_master.station == "Default"? "" : x.tbl_station_master.station,
                     supervisor = x.supervisor,
                     type = x.tbl_roles_master.roles
                 })
@@ -78,7 +79,27 @@ namespace APL.Services
 
         public async Task<int> CreateUser(UserCreateDto dto)
         {
+            //check user with same email and department exists
 
+            List<UserManagementDto>? userList = await _db.tbl_user_management.Include(x => x.tbl_department_master).Include(x => x.tbl_roles_master)
+                .AsNoTracking().Where(x => x.isactive && x.departmentid == dto.departmentId
+                && x.typeid == dto.typeId && x.email == dto.email).Select(x => new UserManagementDto
+                {
+                    id = x.id,
+                    name = x.name,
+                    email = x.email,
+                    departmentName = x.tbl_department_master.department,
+                    stationName = x.tbl_station_master.station == "Default" ? "" : x.tbl_station_master.station,
+                    supervisor = x.supervisor,
+                    type = x.tbl_roles_master.roles
+                })
+               .OrderByDescending(f => f.id)
+               .ToListAsync();
+
+            if (userList.Count > 0 )
+            {
+                return 0;
+            }
             UserManagement entity = new UserManagement
             {
                 name = dto?.name?.Trim(),
@@ -88,6 +109,7 @@ namespace APL.Services
                 stationid = dto.stationid,
                 supervisor = string.IsNullOrWhiteSpace(dto.supervisor) ? null : dto.supervisor.Trim(),
                 isactive = true,
+                isdisable = false,
                 createdon = DateTime.UtcNow,
                 updatedon = DateTime.UtcNow,
                 createdby = "System", //get eid from token 
@@ -99,19 +121,32 @@ namespace APL.Services
             return entity.id;
         }
 
-        public async Task<bool> DeleteUser(UserCreateDto dto)
+        public async Task<bool> DeleteUser(DeleteIdDto dto)
         {
             UserManagement? entity = await _db.tbl_user_management
                                   .FirstOrDefaultAsync(x => x.id == dto.id);
 
             if(entity != null)
             {
-                _db.tbl_user_management.Remove(entity);
+                entity.isactive = false;
+                entity.isdisable = true;
+                await _db.SaveChangesAsync();
+                return true;
+            }      
+            return false;
+        }
+
+        public async Task<bool> DisableEnableUser(DisableUserDto dto)
+        {
+            UserManagement? entity = await _db.tbl_user_management
+                                  .FirstOrDefaultAsync(x => x.id == dto.id);
+
+            if (entity != null)
+            {
+                entity.isdisable = dto.isDisable;
                 await _db.SaveChangesAsync();
                 return true;
             }
-         
-
             return false;
         }
 
@@ -128,7 +163,6 @@ namespace APL.Services
                 entity.departmentid = dto.departmentId;
                 entity.typeid = dto.typeId;
                 entity.supervisor = string.IsNullOrWhiteSpace(dto.supervisor) ? null : dto.supervisor.Trim();
-                entity.isactive = true;
                 entity.updatedon = DateTime.UtcNow;
                 entity.updatedby = "System"; //get eid from token 
                 //_db.Update(entity);

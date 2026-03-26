@@ -35,14 +35,14 @@ namespace APL.Services
             return entity.id;
         }
 
-        public  async Task<bool> DeletePerspective(PerspectiveDto dto)
+        public  async Task<bool> DeletePerspective(DeleteIdDto dto)
         {
             Perspective? entity = await _db.tbl_perspective
                                   .FirstOrDefaultAsync(x => x.id == dto.id);
 
             if (entity != null)
             {
-                _db.tbl_perspective.Remove(entity);
+                entity.isactive = false;
                 await _db.SaveChangesAsync();
                 return true;
             }
@@ -104,14 +104,14 @@ namespace APL.Services
             return entity.id;
         }
 
-        public async Task<bool> DeleteStrategicObjective(StrategicObjectiveDto dto)
+        public async Task<bool> DeleteStrategicObjective(DeleteIdDto dto)
         {
             StrategicObjective? entity = await _db.tbl_strategic_objective
                                   .FirstOrDefaultAsync(x => x.id == dto.id);
 
             if (entity != null)
             {
-                _db.tbl_strategic_objective.Remove(entity);
+                entity.isactive = false;
                 await _db.SaveChangesAsync();
                 return true;
             }

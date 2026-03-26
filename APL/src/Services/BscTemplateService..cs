@@ -110,7 +110,7 @@ namespace APL.Services
 
         }
 
-        public async Task<ResultDto> GetBscTemplateById(SelectPerspectiveKpiDto bsc)
+        public async Task<ResultDto<SelectPerspectiveKpiDto>> GetBscTemplateById(SelectPerspectiveKpiDto bsc)
         {
             FinancialYearRange fy = GetFinancialYearRange(DateTime.UtcNow);
 
@@ -147,10 +147,11 @@ namespace APL.Services
             if (exists == null)
             {
 
-                return new ResultDto
+                return new ResultDto<SelectPerspectiveKpiDto>
                 {
                     status = "Failure",
-                    message = "No records found."
+                    message = "No records found.",
+                    result = null
                 };
             }
 
@@ -161,7 +162,7 @@ namespace APL.Services
             bsc.perspective = new List<PerspectiveObjectiveSelected>();
 
             // STEP 3 — Map children (Perspective → Objective → KPI)
-            foreach (BscPerspective p in exists.tbl_bsc_perspective)
+            foreach (BscPerspective p in exists.tbl_bsc_perspective.OrderBy(x=>x.id))
             {
                 PerspectiveObjectiveSelected pDto = new PerspectiveObjectiveSelected();
                 pDto.perspectiveId = p.perspectiveid;
@@ -193,15 +194,15 @@ namespace APL.Services
                 bsc.perspective.Add(pDto);
             }
 
-            return new ResultDto
+            return new ResultDto<SelectPerspectiveKpiDto>
             {
                 status = "Success",
-                formData = bsc
+                result = bsc
             };
 
 
         }
-        public async Task<ResultDto> SaveBscTemplate(SelectPerspectiveKpiDto bsc)
+        public async Task<ResultDto<SelectPerspectiveKpiDto>> SaveBscTemplate(SelectPerspectiveKpiDto bsc)
         {
             BscFormHeader? exists = await GetBscTemplateForFyAsync(bsc);
 
@@ -213,24 +214,67 @@ namespace APL.Services
 
             if (exists.issharedbyadmin)
             {
-                return new ResultDto
+                return new ResultDto<SelectPerspectiveKpiDto>
                 {
                     status = "Failure",
-                    message = "Template already exists for selected department for this FY."
+                    message = "Template already exists for selected department for this FY.",
+                    result = null
                 };
             }
 
             UpdateTemplate(exists, bsc);
             await _db.SaveChangesAsync();
 
-            return new ResultDto
+            return new ResultDto<SelectPerspectiveKpiDto>
             {
                 status = "Success",
-                message = "Template updated fully."
+                message = "Template updated fully.",
+                result = null
             };
         }
 
-        private async Task<ResultDto> CreateNewTemplate(SelectPerspectiveKpiDto bsc)
+        public async Task<ResultDto<List<UserManagementDto>>> GetSpocDetails(SelectPerspectiveKpiDto bsc)
+        {
+            BscFormHeader? exists = await GetBscTemplateForFyAsync(bsc);
+
+            List<UserManagementDto>? spocList = await _db.tbl_user_management.Include(x => x.tbl_department_master).Include(x => x.tbl_station_master).Include(x => x.tbl_roles_master)
+                .AsNoTracking().Where(x => x.isactive &&
+                  (bsc.department == "Default" || x.departmentid == bsc.departmentId) &&
+                  (bsc.stationName == "Default" || x.stationid == bsc.stationId)
+                  
+                ).Select(x => new UserManagementDto
+                {
+                    id = x.id,
+                    name = x.name,
+                    email = x.email,
+                    departmentName = x.tbl_department_master.department,
+                    stationName = x.tbl_station_master.station == "Default" ? "" : x.tbl_station_master.station,
+                    supervisor = x.supervisor,
+                    type = x.tbl_roles_master.roles
+                })
+                .Where(x=>x.type == "SPOC")
+               .AsNoTracking()
+               .OrderByDescending(f => f.id)
+               .ToListAsync();
+
+            if(spocList.Count == 0)
+            {
+                return new ResultDto<List<UserManagementDto>>
+                {
+                    status = "Failure",
+                    message = "Share failed: No active SPOC mapped to this Department",
+                    result = null
+                };
+            }
+            return new ResultDto<List<UserManagementDto>>
+            {
+                status = "Success",
+                result = spocList
+            }; ;
+
+        }
+
+        private async Task<ResultDto<SelectPerspectiveKpiDto>> CreateNewTemplate(SelectPerspectiveKpiDto bsc)
         {
             int submittedId = await _db.tbl_object_master
                 .Where(x => x.value == "Draft - Template Creation")
@@ -302,9 +346,10 @@ namespace APL.Services
 
             bsc.formId = form.id;
 
-            return new ResultDto
+            return new ResultDto<SelectPerspectiveKpiDto>
             {
-                status = "Success"
+                status = "Success",
+                result = null
             };
         }
 
@@ -460,8 +505,8 @@ namespace APL.Services
                 .FirstOrDefaultAsync(x =>
                     x.createdon >= fyStart &&
                     x.createdon <= fyEnd &&
-                    (bsc.departmentId == 0 || x.departmentid == bsc.departmentId) &&
-                    (bsc.stationId == 0 || x.stationid == bsc.stationId)
+                    (bsc.department == "Default" || x.departmentid == bsc.departmentId) &&
+                    (bsc.stationName == "Default" || x.stationid == bsc.stationId)
                 );
         }
     }

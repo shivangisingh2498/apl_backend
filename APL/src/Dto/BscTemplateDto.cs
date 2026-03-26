@@ -17,8 +17,6 @@
     }
     public class PerspectiveObjectiveSelected
     {
-        public int bscPerspectiveId { get; set; }
-        public int bscStrategicObjectiveId { get; set; }
         public int perspectiveId { get; set; }
         public string? perspectiveName { get; set; }
         public int strategicObjectiveId { get; set; }
@@ -27,13 +25,9 @@
     }
     public class KpiSelectedDto
     {
-        public int kid { get; set; }
         public int kpiId { get; set; }
         public string? kpiName { get; set; }
         public string? frequency { get; set; }
-        public bool isSharedByAdmin { get; set; }
-        public int statusId { get; set; }
-        public bool isSubmittedBySpoc { get; set; }
     }
 
     public class FinancialYearRange
