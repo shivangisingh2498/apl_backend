@@ -26,6 +26,7 @@ namespace APL.Entities
         public ICollection<BscPerspective> tbl_bsc_perspective { get; set; } = new List<BscPerspective>();
         public ICollection<BscStrategicObjective> tbl_bsc_strategic_objective { get; set; } = new List<BscStrategicObjective>();
         public ICollection<BscKpi> tbl_bsc_kpi { get; set; } = new List<BscKpi>();
+        public ICollection<BscAuditTrail> tbl_bsc_audit_trail { get; set; } = new List<BscAuditTrail>();
     }
 
 }

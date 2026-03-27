@@ -11,5 +11,7 @@ namespace APL.Services
         Task<ResultDto<SelectPerspectiveKpiDto>> SaveBscTemplate(SelectPerspectiveKpiDto bsc);
         Task<ResultDto<SelectPerspectiveKpiDto>> GetBscTemplateById(SelectPerspectiveKpiDto bsc);
         Task<ResultDto<List<UserManagementDto>>> GetSpocDetails(SelectPerspectiveKpiDto bsc);
+
+        Task<ResultDto<string>> ShareBscTemplate(SelectPerspectiveKpiDto bsc);
     }
 }

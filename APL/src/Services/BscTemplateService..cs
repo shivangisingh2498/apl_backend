@@ -224,12 +224,12 @@ namespace APL.Services
 
             UpdateTemplate(exists, bsc);
             await _db.SaveChangesAsync();
-
+            
             return new ResultDto<SelectPerspectiveKpiDto>
             {
                 status = "Success",
                 message = "Template updated fully.",
-                result = null
+                result = bsc
             };
         }
 
@@ -237,27 +237,8 @@ namespace APL.Services
         {
             BscFormHeader? exists = await GetBscTemplateForFyAsync(bsc);
 
-            List<UserManagementDto>? spocList = await _db.tbl_user_management.Include(x => x.tbl_department_master).Include(x => x.tbl_station_master).Include(x => x.tbl_roles_master)
-                .AsNoTracking().Where(x => x.isactive &&
-                  (bsc.department == "Default" || x.departmentid == bsc.departmentId) &&
-                  (bsc.stationName == "Default" || x.stationid == bsc.stationId)
-                  
-                ).Select(x => new UserManagementDto
-                {
-                    id = x.id,
-                    name = x.name,
-                    email = x.email,
-                    departmentName = x.tbl_department_master.department,
-                    stationName = x.tbl_station_master.station == "Default" ? "" : x.tbl_station_master.station,
-                    supervisor = x.supervisor,
-                    type = x.tbl_roles_master.roles
-                })
-                .Where(x=>x.type == "SPOC")
-               .AsNoTracking()
-               .OrderByDescending(f => f.id)
-               .ToListAsync();
-
-            if(spocList.Count == 0)
+            List<UserManagementDto>? spocList =await GetSpoc(bsc);
+            if (spocList==null || spocList.Count == 0)
             {
                 return new ResultDto<List<UserManagementDto>>
                 {
@@ -274,6 +255,72 @@ namespace APL.Services
 
         }
 
+        public async Task<ResultDto<string>> ShareBscTemplate(SelectPerspectiveKpiDto bsc)
+        {
+            //change the status in header
+            BscFormHeader? form = await _db.tbl_bsc_form_header.FirstOrDefaultAsync(x =>
+                    x.id == bsc.formId);
+            if (form != null)
+            {
+                form.issharedbyadmin = true;
+                form.templatecreatedate = DateTime.UtcNow;
+            }
+            else
+            {
+                return new ResultDto<string>
+                {
+                    status = "Failure",
+                    message = "No remplate found"
+                };
+            }
+
+
+            //get the spoc details
+            var spocList = await GetSpoc(bsc);
+
+            if(spocList == null || spocList.Count == 0)
+            {
+                return new ResultDto<string>
+                {
+                      status = "Failure",
+                      message = "Share failed: No active SPOC mapped to this Department."
+                };
+            }
+
+
+            int submittedId = await _db.tbl_object_master
+               .Where(x => x.value == "Form Created")
+               .Select(x => x.id)
+               .FirstAsync();
+
+
+
+            foreach(UserManagementDto user in spocList)
+            {
+                BscAuditTrail audit = new BscAuditTrail
+                {
+                    userid = user.id,
+                    formstatusid = submittedId,
+                    createdby = "System",
+                    createdon = DateTime.UtcNow,
+                    updatedby = "System",
+                    updatedon = DateTime.UtcNow,
+                    isactive = true,
+                };
+                form.tbl_bsc_audit_trail.Add(audit);
+            }
+
+            await _db.SaveChangesAsync();
+
+            bsc.formId = form.id;
+
+            return new ResultDto<string>
+            {
+                status = "Success"
+            };
+
+            //imsert in the formheader
+        }
         private async Task<ResultDto<SelectPerspectiveKpiDto>> CreateNewTemplate(SelectPerspectiveKpiDto bsc)
         {
             int submittedId = await _db.tbl_object_master
@@ -349,7 +396,7 @@ namespace APL.Services
             return new ResultDto<SelectPerspectiveKpiDto>
             {
                 status = "Success",
-                result = null
+                result = bsc
             };
         }
 
@@ -508,6 +555,30 @@ namespace APL.Services
                     (bsc.department == "Default" || x.departmentid == bsc.departmentId) &&
                     (bsc.stationName == "Default" || x.stationid == bsc.stationId)
                 );
+        }
+
+        private async Task<List<UserManagementDto>?> GetSpoc(SelectPerspectiveKpiDto bsc)
+        {
+            List<UserManagementDto>? spocList = await _db.tbl_user_management.Include(x => x.tbl_department_master).Include(x => x.tbl_station_master).Include(x => x.tbl_roles_master)
+                .AsNoTracking().Where(x => x.isactive &&
+                  (bsc.department == "Default" || x.departmentid == bsc.departmentId) &&
+                  (bsc.stationName == "Default" || x.stationid == bsc.stationId)
+
+                ).Select(x => new UserManagementDto
+                {
+                    id = x.id,
+                    name = x.name,
+                    email = x.email,
+                    departmentName = x.tbl_department_master.department,
+                    stationName = x.tbl_station_master.station == "Default" ? "" : x.tbl_station_master.station,
+                    supervisor = x.supervisor,
+                    type = x.tbl_roles_master.roles
+                })
+                .Where(x => x.type == "SPOC")
+               .AsNoTracking()
+               .OrderByDescending(f => f.id)
+               .ToListAsync();
+            return spocList;
         }
     }
 }

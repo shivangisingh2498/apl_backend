@@ -24,6 +24,7 @@ namespace APL.Entities
         public RolesMaster? tbl_roles_master { get; set; }
         public DepartmentMaster? tbl_department_master { get; set; }
         public StationMaster? tbl_station_master { get; set; }
+        public ICollection<BscAuditTrail> tbl_bsc_audit_trail { get; set; } = new List<BscAuditTrail>();
     }
 
 }

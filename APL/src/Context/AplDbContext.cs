@@ -92,11 +92,26 @@ namespace APL.Data
                 .HasForeignKey(k => k.bscstrategicobjectiveid);
 
             modelBuilder.Entity<BscKpi>()
-    .HasOne(k => k.tbl_strategic_objective)
-    .WithMany()
-    .HasForeignKey(k => k.bscstrategicobjectiveid);
+            .HasOne(k => k.tbl_strategic_objective)
+            .WithMany()
+            .HasForeignKey(k => k.bscstrategicobjectiveid);
 
+            modelBuilder.Entity<BscAuditTrail>()
+            .HasOne(at => at.tbl_bsc_form_header)
+            .WithMany(fh => fh.tbl_bsc_audit_trail)
+            .HasForeignKey(at => at.bscformid)
+            .OnDelete(DeleteBehavior.Cascade);
 
+            modelBuilder.Entity<BscAuditTrail>()
+            .HasOne(at => at.tbl_user_management)
+            .WithMany(fh => fh.tbl_bsc_audit_trail)
+            .HasForeignKey(at => at.userid)
+            .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<BscAuditTrail>()
+           .HasOne(at => at.tbl_object_master)
+           .WithMany(fh => fh.tbl_bsc_audit_trail)
+           .HasForeignKey(at => at.formstatusid);
 
         }
 
@@ -113,6 +128,7 @@ namespace APL.Data
         public DbSet<BscPerspective> tbl_bsc_perspective { get; set; }
         public DbSet<BscStrategicObjective> tbl_bsc_strategic_objective { get; set; }
         public DbSet<BscKpi> tbl_bsc_kpi { get; set; }
+        public DbSet<BscAuditTrail> tbl_bsc_audit_trail { get; set; }
     }
 
 }

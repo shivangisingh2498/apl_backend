@@ -16,8 +16,7 @@ namespace APL.Entities
         public DateTime? createdon { get; set; }
         public string? updatedby { get; set; }
         public DateTime? updatedon { get; set; }
-        //[JsonIgnore]
-        //public ICollection<UserManagement> tbl_user_management { get; set; } = new List<UserManagement>();
+        public ICollection<BscAuditTrail> tbl_bsc_audit_trail { get; set; } = new List<BscAuditTrail>();
     }
 
 }

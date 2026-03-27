@@ -100,7 +100,20 @@ namespace APL.Controllers
             return Ok(dto);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> ShareBscTemplate(SelectPerspectiveKpiDto bsc)
+        {
 
+            ResultDto<string> result = await _service.ShareBscTemplate(bsc);
+
+            CustomResponse< ResultDto<string> > dto = new CustomResponse<ResultDto<string>>
+            {
+                status = result.status ,
+                data = result
+            };
+
+            return Ok(dto);
+        }
 
     }
 }
