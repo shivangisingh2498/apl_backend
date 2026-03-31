@@ -62,7 +62,7 @@ builder.Services.AddTransient<ExceptionHandlingMiddleware>();
 //                    context.Principal = new ClaimsPrincipal(identity);
 //                    context.Success(); // This skips the internal signature check
 //                }
-//                return Task.CompletedTask;
+////                return Task.CompletedTask;
 //            }
 //        };
 
@@ -80,7 +80,16 @@ builder.Services.AddTransient<ExceptionHandlingMiddleware>();
 
 builder.Services.AddAuthorization();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngularApp",
+        policy => policy.WithOrigins("http://localhost:4200")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod());
+});
+
 var app = builder.Build();
+app.UseCors("AllowAngularApp");
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 // --- 4. Middleware Pipeline ---
 // The order here is critical for security to function

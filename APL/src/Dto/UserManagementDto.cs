@@ -26,6 +26,7 @@ namespace APL.Models
         public string? supervisor { get; set; }
         public string? type { get; set; }
         public bool isActive { get; set; } = true;
+        public bool isDisable { get; set; } = true;
     }
     public class UserCreateDto
     {
