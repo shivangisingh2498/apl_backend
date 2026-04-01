@@ -4,23 +4,21 @@ using System.Text.Json.Serialization;
 
 namespace APL.Entities
 {
-    [Table("tbl_kpi_master")]
-    public class KpiMaster
+    [Table("tbl_uom_master")]
+    public class UomMaster
     {
         [Key]
         public int id { get; set; }
-        public string? kpiname { get; set; }
-        public string? definition { get; set; }
-        public string? formula { get; set; }
-        public int uomid { get; set; }
+        public string? uom { get; set; }
+        public decimal? minvalue { get; set; }
+        public decimal? maxvalue { get; set; }
         public bool isbetter { get; set; } 
         public bool isactive { get; set; } = true;
         public string? createdby { get; set; }
         public DateTime? createdon { get; set; }
         public string? updatedby { get; set; }
         public DateTime? updatedon { get; set; }
-        public UomMaster? tbl_uom_master { get; set; }
-        public ICollection<BscKpi> tbl_bsc_kpi { get; set; } = new List<BscKpi>();
+        public ICollection<KpiMaster> tbl_kpi_master { get; set; } = new List<KpiMaster>();
     }
 
 }

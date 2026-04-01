@@ -12,7 +12,8 @@ namespace APL.Entities
         public int bscformid { get; set; }
         public int bscstrategicobjectiveid { get; set; }
         public int kpiid { get; set; }
-        public string? frequency { get; set; }
+        //public string? frequency { get; set; }
+        public int frequencyid { get; set; }
         public string? createdby { get; set; }
         public DateTime? createdon { get; set; }
         public string? updatedby { get; set; }
@@ -21,6 +22,10 @@ namespace APL.Entities
         public StrategicObjective? tbl_strategic_objective { get; set; }
         public KpiMaster? tbl_kpi_master { get; set; }
         public BscStrategicObjective? tbl_bsc_strategic_objective { get; set; }
+
+        public ObjectMaster? tbl_object_master{ get; set; }
+        public ICollection<BscYearlyTarget> tbl_bsc_yearly_target { get; set; } = new List<BscYearlyTarget>();
+        public ICollection<BscMonthlyTarget> tbl_bsc_monthly_target { get; set; } = new List<BscMonthlyTarget>();
     }
 
 }

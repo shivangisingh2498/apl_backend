@@ -28,7 +28,8 @@ namespace APL.Services
                     departmentName = x.tbl_department_master.department,
                     stationName = x.tbl_station_master.station == "Default"? "" : x.tbl_station_master.station,
                     supervisor = x.supervisor,
-                    type = x.tbl_roles_master.roles
+                    type = x.tbl_roles_master.roles,
+                    isDisable  = x.isdisable
                 })
                .AsNoTracking()
                .OrderByDescending(f => f.id)

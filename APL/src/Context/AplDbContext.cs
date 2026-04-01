@@ -96,6 +96,16 @@ namespace APL.Data
             .WithMany()
             .HasForeignKey(k => k.bscstrategicobjectiveid);
 
+
+
+            modelBuilder.Entity<BscKpi>()
+                .HasOne(k => k.tbl_object_master)
+                .WithMany(o => o.tbl_bsc_kpi)
+                .HasForeignKey(k => k.frequencyid)
+                .HasPrincipalKey(o => o.id);
+
+
+
             modelBuilder.Entity<BscAuditTrail>()
             .HasOne(at => at.tbl_bsc_form_header)
             .WithMany(fh => fh.tbl_bsc_audit_trail)
@@ -113,6 +123,36 @@ namespace APL.Data
            .WithMany(fh => fh.tbl_bsc_audit_trail)
            .HasForeignKey(at => at.formstatusid);
 
+            modelBuilder.Entity<KpiMaster>()
+          .HasOne(at => at.tbl_uom_master)
+          .WithMany(fh => fh.tbl_kpi_master)
+          .HasForeignKey(at => at.uomid);
+
+
+            modelBuilder.Entity<FrequencyMonthsMapping>()
+           .HasOne(at => at.tbl_object_master)
+           .WithMany(fh => fh.tbl_frequency_months_mapping)
+           .HasForeignKey(at => at.frequencyid);
+
+            modelBuilder.Entity<BscYearlyTarget>()
+       .HasOne(at => at.tbl_bsc_form_header)
+       .WithMany(fh => fh.tbl_bsc_yearly_target)
+       .HasForeignKey(at => at.bscformid);
+
+            modelBuilder.Entity<BscYearlyTarget>()
+     .HasOne(at => at.tbl_bsc_kpi)
+     .WithMany(fh => fh.tbl_bsc_yearly_target)
+     .HasForeignKey(at => at.kpiid);
+
+            modelBuilder.Entity<BscMonthlyTarget>()
+ .HasOne(at => at.tbl_bsc_form_header)
+ .WithMany(fh => fh.tbl_bsc_monthly_target)
+ .HasForeignKey(at => at.bscformid);
+
+            modelBuilder.Entity<BscMonthlyTarget>()
+     .HasOne(at => at.tbl_bsc_kpi)
+     .WithMany(fh => fh.tbl_bsc_monthly_target)
+     .HasForeignKey(at => at.kpiid);
         }
 
         public DbSet<Perspective> tbl_perspective { get; set; }
@@ -129,6 +169,9 @@ namespace APL.Data
         public DbSet<BscStrategicObjective> tbl_bsc_strategic_objective { get; set; }
         public DbSet<BscKpi> tbl_bsc_kpi { get; set; }
         public DbSet<BscAuditTrail> tbl_bsc_audit_trail { get; set; }
+        public DbSet<FrequencyMonthsMapping> tbl_frequency_months_mapping { get; set; }
+        public DbSet<BscYearlyTarget> tbl_bsc_yearly_target { get; set; }
+        public DbSet<BscMonthlyTarget> tbl_bsc_monthly_target { get; set; }
     }
 
 }

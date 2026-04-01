@@ -28,6 +28,7 @@
         public int kpiId { get; set; }
         public string? kpiName { get; set; }
         public string? frequency { get; set; }
+        public int frequencyId { get; set; }
     }
 
     public class FinancialYearRange

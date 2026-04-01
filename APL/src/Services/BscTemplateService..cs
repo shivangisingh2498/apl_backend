@@ -45,10 +45,12 @@ namespace APL.Services
             .ToListAsync();
 
 
+
             return new StationDepartmentDto
             {
                 departmentList = result,
-                stationList = stationList
+                stationList = stationList,
+                // frequencyList = freqList
 
             };
         }
@@ -60,6 +62,7 @@ namespace APL.Services
             AplDbContext context1 = _contextFactory.CreateDbContext();
             AplDbContext context2 = _contextFactory.CreateDbContext();
             AplDbContext context3 = _contextFactory.CreateDbContext();
+            AplDbContext context4 = _contextFactory.CreateDbContext();
 
             Task<List<PerspectiveDto>> perspectiveTask =
                 context1.tbl_perspective
@@ -97,13 +100,25 @@ namespace APL.Services
                     .AsNoTracking()
                     .ToListAsync();
 
+            List<FrequencyDto> freqList = await context4.tbl_object_master.Where(x => x.description == "Frequency")
+.AsNoTracking().Select(x => new FrequencyDto
+{
+    id = x.id,
+    frequnecy = x.value
+})
+.AsNoTracking()
+.OrderBy(f => f.id)
+.ToListAsync();
+
             await Task.WhenAll(perspectiveTask, objectiveTask, kpiTask);
 
             CreateTemplateDropdownDto response = new CreateTemplateDropdownDto
             {
                 perspectiveList = perspectiveTask.Result,
                 strategicObjectiveList = objectiveTask.Result,
-                kpiDetailsDtos = kpiTask.Result
+                kpiDetailsDtos = kpiTask.Result,
+                frequencyList = freqList 
+                
             };
 
             return response;
@@ -134,6 +149,15 @@ namespace APL.Services
                     .ThenInclude(p => p.tbl_bsc_strategic_objective)
                         .ThenInclude(o => o.tbl_bsc_kpi)
                             .ThenInclude(k => k.tbl_kpi_master)
+                // Perspective -> Objective -> KPI -> KPI Master
+                .Include(x => x.tbl_bsc_perspective)
+                    .ThenInclude(p => p.tbl_bsc_strategic_objective)
+                        .ThenInclude(o => o.tbl_bsc_kpi)
+                            .ThenInclude(k => k.tbl_kpi_master)
+                 .Include(x => x.tbl_bsc_perspective)
+                    .ThenInclude(p => p.tbl_bsc_strategic_objective)
+                        .ThenInclude(o => o.tbl_bsc_kpi)
+                            .ThenInclude(k => k.tbl_object_master)
 
                 .AsNoTracking().FirstOrDefaultAsync(x =>
                     x.createdon >= fyStart &&
@@ -162,7 +186,7 @@ namespace APL.Services
             bsc.perspective = new List<PerspectiveObjectiveSelected>();
 
             // STEP 3 — Map children (Perspective → Objective → KPI)
-            foreach (BscPerspective p in exists.tbl_bsc_perspective.OrderBy(x=>x.id))
+            foreach (BscPerspective p in exists.tbl_bsc_perspective.OrderBy(x => x.id))
             {
                 PerspectiveObjectiveSelected pDto = new PerspectiveObjectiveSelected();
                 pDto.perspectiveId = p.perspectiveid;
@@ -180,8 +204,9 @@ namespace APL.Services
                     {
                         KpiSelectedDto kdto = new KpiSelectedDto();
                         kdto.kpiId = k.kpiid;
-                        kdto.frequency = k.frequency;
-                        kdto.kpiName = k.tbl_kpi_master.kpiname;
+                        kdto.frequencyId = k.tbl_object_master.id;
+                        kdto.frequency = k?.tbl_object_master?.value;
+                        kdto.kpiName = k?.tbl_kpi_master?.kpiname;
                         pDto.kpiList.Add(kdto);
                     }
                 }
@@ -224,7 +249,7 @@ namespace APL.Services
 
             UpdateTemplate(exists, bsc);
             await _db.SaveChangesAsync();
-            
+
             return new ResultDto<SelectPerspectiveKpiDto>
             {
                 status = "Success",
@@ -237,8 +262,8 @@ namespace APL.Services
         {
             BscFormHeader? exists = await GetBscTemplateForFyAsync(bsc);
 
-            List<UserManagementDto>? spocList =await GetSpoc(bsc);
-            if (spocList==null || spocList.Count == 0)
+            List<UserManagementDto>? spocList = await GetSpoc(bsc);
+            if (spocList == null || spocList.Count == 0)
             {
                 return new ResultDto<List<UserManagementDto>>
                 {
@@ -278,12 +303,12 @@ namespace APL.Services
             //get the spoc details
             var spocList = await GetSpoc(bsc);
 
-            if(spocList == null || spocList.Count == 0)
+            if (spocList == null || spocList.Count == 0)
             {
                 return new ResultDto<string>
                 {
-                      status = "Failure",
-                      message = "Share failed: No active SPOC mapped to this Department."
+                    status = "Failure",
+                    message = "Share failed: No active SPOC mapped to this Department."
                 };
             }
 
@@ -295,7 +320,7 @@ namespace APL.Services
 
 
 
-            foreach(UserManagementDto user in spocList)
+            foreach (UserManagementDto user in spocList)
             {
                 BscAuditTrail audit = new BscAuditTrail
                 {
@@ -373,7 +398,7 @@ namespace APL.Services
                     var kpi = new BscKpi
                     {
                         kpiid = k.kpiId,
-                        frequency = k.frequency,
+                        frequencyid = k.frequencyId,
                         createdby = "System",
                         createdon = DateTime.UtcNow,
                         updatedby = "System",
@@ -487,7 +512,7 @@ namespace APL.Services
                         {
                             kpiid = incomingKpi.kpiId,
                             bscformid = exists.id,
-                            frequency = incomingKpi.frequency,
+                            frequencyid = incomingKpi.frequencyId,
                             createdby = "System",
                             createdon = DateTime.UtcNow,
                             updatedby = "System",
@@ -496,7 +521,7 @@ namespace APL.Services
                     }
                     else
                     {
-                        kpi.frequency = incomingKpi.frequency;
+                        kpi.frequencyid = incomingKpi.frequencyId;
                         kpi.updatedon = DateTime.UtcNow;
                         kpi.updatedby = "System";
                     }

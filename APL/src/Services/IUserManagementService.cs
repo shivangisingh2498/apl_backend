@@ -5,7 +5,7 @@ namespace APL.Services
 {
     public interface IUserManagementService
     {
-        Task<UserDepartmentDto> GetAllUsers();
+        public Task<UserDepartmentDto> GetAllUsers();
         public Task<int> CreateUser(UserCreateDto dto);
 
         public Task<bool> DeleteUser(DeleteIdDto dto);

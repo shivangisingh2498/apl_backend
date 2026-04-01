@@ -7,6 +7,7 @@ namespace APL.Models
     {
         public List<DepartmentMasterDto>? departmentList { get; set; }
         public List<StationDto>? stationList { get; set; }
+      
     }
     public class UserDepartmentDto
     {
@@ -26,6 +27,14 @@ namespace APL.Models
         public string? supervisor { get; set; }
         public string? type { get; set; }
         public bool isActive { get; set; } = true;
+        public bool isDisable { get; set; } = true;
+    }
+    public class UserDepartmentRoleDto
+    {
+        public int id { get; set; }
+        public int departmentId { get; set; }
+        public int roleId { get; set; }
+        public string? role { get; set; }
     }
     public class UserCreateDto
     {
@@ -73,4 +82,6 @@ namespace APL.Models
         public string? station { get; set; }
         public bool isActive { get; set; }
     }
+
+
 }

@@ -17,6 +17,8 @@ namespace APL.Entities
         public string? updatedby { get; set; }
         public DateTime? updatedon { get; set; }
         public ICollection<BscAuditTrail> tbl_bsc_audit_trail { get; set; } = new List<BscAuditTrail>();
+        public ICollection<BscKpi> tbl_bsc_kpi{ get; set; } = new List<BscKpi>();
+        public ICollection<FrequencyMonthsMapping> tbl_frequency_months_mapping { get; set; } = new List<FrequencyMonthsMapping>();
     }
 
 }

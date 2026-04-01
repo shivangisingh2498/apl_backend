@@ -156,14 +156,14 @@ namespace APL.Services
 
         public async Task<List<KpiDto>> GetKpiList()
         {
-            List<KpiDto> kpiList = await _db.tbl_kpi_master.AsNoTracking().Where(x => x.isactive).Select(x =>
+            List<KpiDto> kpiList = await _db.tbl_kpi_master.Include(x=>x.tbl_uom_master).AsNoTracking().Where(x => x.isactive).Select(x =>
                 new KpiDto
                 {
                     id = x.id,
                     kpiname = x.kpiname,
                     definition = x.definition,
                     formula = x.formula,
-                    uom = x.uom,
+                    uom = x.tbl_uom_master.uom,
                     isbetter = x.isbetter
                 }
                 ).ToListAsync();
